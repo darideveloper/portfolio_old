@@ -4,11 +4,6 @@ html {
 }
 
 body {
-  background: #434449;
-  background: -webkit-radial-gradient(top left, #434449, #141518);
-  background: -moz-radial-gradient(top left, #434449, #141518);
-  background: radial-gradient(to bottom right, #434449, #141518);
-  background-size: 100vw 100vh;
   width: 100vw;
   margin: 0;
   font-family: "Montserrat", sans-serif;
@@ -78,13 +73,13 @@ header nav ul {
   margin: 0;
   padding: 0;
 }
-header nav ul li {
+header nav ul a li {
   list-style: none;
   text-transform: uppercase;
   color: #d1d1d1;
   font-size: 18px;
 }
-header nav ul li:nth-child(2) {
+header nav ul a:nth-child(2) {
   margin-left: 80px;
 }
 @media screen and (max-width: 600px) {
@@ -112,6 +107,28 @@ header nav ul li:nth-child(2) {
   header nav ul {
     justify-content: space-between;
   }
+}
+
+.iam {
+  border: 1px solid red;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  display: none;
+}
+
+.fixed-bg {
+  background: #434449;
+  background: -webkit-radial-gradient(top left, #434449, #141518);
+  background: -moz-radial-gradient(top left, #434449, #141518);
+  background: radial-gradient(to bottom right, #434449, #141518);
+  background-size: 100vw 100vh;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 /*# sourceMappingURL=styles.css.map */

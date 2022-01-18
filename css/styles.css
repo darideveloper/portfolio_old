@@ -125,6 +125,8 @@ main .iam .name {
   font-size: 10vw;
   margin: 0;
   padding: 0;
+  text-shadow: 0px 0px 4vw black;
+  font-weight: bold;
 }
 main .iam .uppercase {
   text-transform: uppercase;
@@ -136,6 +138,24 @@ main .iam .up {
 main .iam .down {
   text-align: right;
   margin-right: 100px;
+}
+@media screen and (max-width: 1200px) {
+  main .iam .name {
+    font-size: 14vw;
+  }
+}
+@media screen and (max-width: 800px) {
+  main .iam .up {
+    margin-left: 20px;
+  }
+  main .iam .down {
+    margin-right: 20px;
+  }
+}
+@media screen and (max-width: 500px) {
+  main .uppercase {
+    font-size: 12px;
+  }
 }
 
 .fixed-bg {

@@ -28,22 +28,66 @@ main
             text-align: right
             margin-right: 100px
 
+    .socials
+        display: flex
+        align-items: center
+        justify-content: center
+        position: absolute
+        left: 0
+        top: calc(100vh - 184px - 50px)
+        height: 184px
+        margin-left: 50px
+
+        .column
+            display: flex
+            align-items: center
+            justify-content: center
+            flex-direction: column
+            
+            .icon
+                width: 20px
+                height: 20px
+                padding: 10px
+                margin: 2px
+
+                svg
+                    width: 100%
+                    height: 100%
+                    fill: $color_a
+
+
     @media screen and (max-width: 1200px)
 
-        .iam
-            .name
-                font-size: 14vw
 
     @media screen and (max-width: 800px)
 
         .iam
+            .name
+                font-size: 12vw
+
             .up
                 margin-left: 20px
 
             .down
                 margin-right: 20px
 
+        .socials
+            top: calc(100vh - 50px - 50px)
+            width: 100%
+            margin: 0
+            padding: 0
+            height: auto
+
+            .column
+                flex-direction: row
+
     @media screen and (max-width: 500px)
 
         .uppercase
             font-size: 12px
+
+
+    @media screen and (max-width: 400px)
+        
+        .socials
+            flex-direction: column

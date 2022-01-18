@@ -1,0 +1,82 @@
+.projects
+    // border: 1px solid red
+    margin-top: 100vh
+    position: relative
+
+    .images
+        display: flex
+        align-items: center
+        justify-content: center
+
+        .wrapper-imgs
+            height: auto
+            flex-direction: column
+
+            &.active
+                width: 30%
+                filter: grayscale(60%)
+                margin: 2%
+                
+                .wrapper-img.reflex 
+                    display: none
+
+            &.blur
+                width: 20%
+                filter: grayscale(100%) blur(6px)
+                position: relative
+                // margin-top: 54px
+
+                .wrapper-img.reflex 
+                    transform: scaleY(-1)
+                    margin-top: -2px
+
+    .wrapper-info
+        width: 100%
+        position: absolute
+        top: 420px
+        left: 0
+        z-index: 0
+
+        .info
+
+            .wrapper-title
+                width: 100%
+                height: auto
+                position: relative
+                margin-top: -100px
+                margin-bottom: 25px
+
+                .title
+                    font-size: 80px
+                    margin: 0
+                    text-shadow: 0px 0px 10px black
+                    color: $color_b
+                    display: inline-block
+                    text-transform: uppercase
+
+                .wrapper-bg
+                    position: absolute
+                    width: 100%
+                    z-index: -1
+
+                    .bg
+                        width: 300px
+                        height: 50px
+                        top: 0
+                        left: 0
+                        background: $color_c
+                        filter: blur(20px)
+                        opacity: 0.7
+
+            .details
+                text-align: center
+                line-height: 35px
+
+            .cta
+                text-transform: uppercase
+                margin-top: 25px
+                padding: 15px 40px
+                box-shadow: 4px 4px 12px 4px rgba(black, 0.5)
+                margin-bottom: 25px
+
+

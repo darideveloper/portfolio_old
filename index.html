@@ -9,7 +9,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <title>Dari Dev Portfolio</title>
 </head>
 <body>
@@ -63,7 +63,7 @@
             <img src="imgs/logo.png" alt="dari developer logo">
         </div>
         <nav class="menu">
-            <ul>
+            <ul class="flex-center">
                 <a href="">
                     <li>Projects</li>
                 </a>
@@ -74,7 +74,7 @@
         </nav>
     </header>
 
-    <main>
+    <main class="flex-center">
         <div class="iam">
             <p class="up uppercase">
                 i am
@@ -87,8 +87,8 @@
             </p>
         </div>
 
-        <div class="socials">
-            <div class="column">
+        <div class="socials flex-center">
+            <div class="column flex-center">
                 <a class="icon facebook">
                     <svg>
                         <use xlink:href="#svg-facebook"/>
@@ -110,7 +110,7 @@
                     </svg>
                 </a>
             </div>
-            <div class="column">
+            <div class="column flex-center">
                 <a class="icon telegram">
                     <svg>
                         <use xlink:href="#svg-telegram"/>
@@ -136,26 +136,61 @@
         </div>
     </main>
 
-    <!-- <div class="socials"></div>     -->
-    
-    <!--
-    <section class="projects">
+    <div class="projects fix-width">
         <div class="images">
-            <div class="wrapper-img project last">
-                <img src="" alt="">
+            <div class="wrapper-imgs flex-center hide">
+                <div class="wrapper-img main">
+                    <img src="imgs/project-sample.png" alt="project banner">
+                </div>
+                <div class="wrapper-img reflex">
+                    <img src="imgs/project-sample-reflex.png" alt="project banner">
+                </div>
             </div>
-            <div class="wrapper-img project corrent">
-                <img src="" alt="">
+            <div class="wrapper-imgs flex-center blur">
+                <div class="wrapper-img main">
+                    <img src="imgs/project-sample.png" alt="project banner">
+                </div>
             </div>
-            <div class="wrapper-img project next">
-                <img src="" alt="">
+            <div class="wrapper-imgs flex-center active">
+                <div class="wrapper-img main">
+                    <img src="imgs/project-sample.png" alt="project banner">
+                </div>
+            </div>
+            <div class="wrapper-imgs flex-center blur">
+                <div class="wrapper-img main">
+                    <img src="imgs/project-sample.png" alt="project banner">
+                </div>
+            </div>
+            <div class="wrapper-imgs flex-center hide">
+                <div class="wrapper-img main">
+                    <img src="imgs/project-sample.png" alt="project banner">
+                </div>
+                <div class="wrapper-img reflex">
+                    <img src="imgs/project-sample-reflex.png" alt="project banner">
+                </div>
+            </div>
+            
+        </div>
+        <div class="wrapper-info flex-center">
+            <div class="info">
+                <div class="wrapper-title flex-center">
+                    <h2 class="title">Keep Cafe </h2>
+                    <div class="wrapper-bg flex-center">
+                        <div class="bg"></div>
+                    </div>
+                </div>
+                <p class="details">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet nisl lectus. Nulla facilisi.
+                    <br> 
+                    Integer tristique, tellus ac ultricies iaculis, dolor lorem dignissim justo, in posuere nulla<p>
+                <div class="wrapper-cta flex-center">
+                    <a href="" class="cta">view project</a>
+                </div>
             </div>
         </div>
-        <div class="title"></div>
-        <div class="description"></div>
-        <div class="cta"></div>
-    </section>
+    </div>
 
+    <!--
     <div class="contact">
         <div class="info"></div>
         <div class="form"></div>

@@ -4,6 +4,8 @@ let current_screen = 1
 let max_screens = 3
 scrollableElement.addEventListener('wheel', checkScrollDirection);
 
+console.log (windows_height)
+
 function checkScrollDirection(event) {
     if (checkScrollDirectionIsUp(event)) {
         // Scroll up
@@ -35,3 +37,7 @@ function checkScrollDirectionIsUp(event) {
     }
     return event.deltaY < 0;
 }
+
+window.addEventListener('scroll', function(e) {
+    return None
+})

@@ -1,45 +1,41 @@
 .projects
     margin-top: 100vh
     position: relative
+    flex-direction: column
 
     // * 
     //     border: 1px solid red
 
 
-    .images
-        display: flex
-        align-items: center
-        justify-content: center
+    .wrapper-images
+        width: 100vw
+        overflow-x: hidden
 
-        .wrapper-imgs
-            height: auto
-            flex-direction: column
-            width: 100%
+        .images
+            height: min(40vh, 420px)
 
-            &.active
-                width: 30%
-                filter: grayscale(60%)
-                margin: 2%
-                
-                .wrapper-img.reflex 
-                    display: none
+            .wrapper-img
+                width: auto
+                margin: 0
 
-            &.blur
-                width: 20%
-                filter: grayscale(100%) blur(6px)
-                position: relative
-                // margin-top: 54px
+                &.active
+                    height: 100%
+                    filter: grayscale(60%)
+                    
+                    margin: 20px
 
-                .wrapper-img.reflex 
-                    transform: scaleY(-1)
-                    margin-top: -2px
+                &.blur
+                    height: 60%
+                    filter: grayscale(100%) blur(6px)
+                    position: relative
+                    // margin-top: 54px
 
     .wrapper-info
         width: 100%
-        position: absolute
-        top: 420px
-        left: 0
-        z-index: 0
+        // position: absolute
+        // top: 420px
+        // left: 0
+        // z-index: 0
 
         .info
 
@@ -47,7 +43,7 @@
                 width: 100%
                 height: auto
                 position: relative
-                margin-top: -100px
+                margin-top: -40px
                 margin-bottom: 25px
 
                 .title
@@ -75,14 +71,185 @@
             .details
                 text-align: center
                 line-height: 35px
+                width: 70%
+                margin: 0 auto
 
             .cta
                 text-transform: uppercase
                 margin-top: 25px
                 padding: 15px 40px
                 box-shadow: 4px 4px 12px 4px rgba(black, 0.5)
-                // margin-bottom: 25px
-                margin-bottom: 500vh
+
+    @media screen and (max-width: 1500px)
+
+        .wrapper-info
+            .info
+                .details
+                    width: 60%
+
+    @media screen and (max-width: 1250px)
+
+        .wrapper-images
+            .images
+                width: 100vw
+                overflow-x: hidden
+
+                .wrapper-img
+
+                    &.active
+                        width: calc(40vh / 0.75)
+                        min-width: calc(40vh / 0.75)
+
+                    &.blur
+                        width: calc(40vh * 0.6 / 0.75)
+                        min-width: calc(40vh * 0.6 / 0.75)
+
+
+        @media screen and (max-height: 550px)
+            
+            .wrapper-info
+
+                .info
+
+                    .wrapper-title
+                        margin-bottom: 0
+
+                    .details
+                        display: none
+
+                    .cta
+                        margin-top: 20px
+
+    @media screen and (max-width: 1050px)
+        @media screen and (max-height: 650px)
+            
+            .wrapper-info
+
+                .info
+
+                    .wrapper-title
+                        margin-bottom: 0
+
+                    .details
+                        display: none
+
+                    .cta
+                        margin-top: 20px
+
+    @media screen and (max-width: 950px)
+        .wrapper-images
+            .images
+                .wrapper-img
+                    &.active, &.blur
+                        height: 80%
+                        width: calc(40vh * 0.8 / 0.75)
+                        min-width: calc(40vh * 0.8 / 0.75)
+
+        .wrapper-info
+            .info
+                .wrapper-title
+                    margin-top: 0
+                    
+                    .title
+                        font-size: 8vw
+
+
+        @media screen and (max-height: 700px)
+            
+            .wrapper-info
+
+                .info
+
+                    .wrapper-title
+                        margin-bottom: 0
+
+                    .details
+                        display: none
+
+                    .cta
+                        margin-top: 20px
+
+    @media screen and (max-width: 800px)
+
+        .wrapper-info
+            .info                
+                .details
+                    width: 90%
+
+        @media screen and (max-height: 850px)
+            
+            .wrapper-info
+
+                .info
+
+                    .wrapper-title
+                        margin-bottom: 0
+
+                    .details
+                        display: none
+
+                    .cta
+                        margin-top: 20px
+
+    @media screen and (max-width: 650px)
+        .wrapper-images
+            .images
+                height: auto
+
+                .wrapper-img
+                    &.active, &.blur
+                        width: 60vw
+                        min-width: 60vw
+                        height: calc(60vw / 0.75)
+
+        @media screen and (max-height: 1120px)
+            
+            .wrapper-info
+
+                .info
+
+                    .wrapper-title
+                        margin-bottom: 0
+
+                    .details
+                        display: none
+
+                    .cta
+                        margin-top: 20px
+
+    @media screen and (max-width: 425px)
+
+        .wrapper-info
+
+            .info
+
+                .wrapper-title
+                    margin-bottom: 25px
+
+                .details
+                    display: block
+
+                .cta
+                    margin-top: 25px
+
+
+        @media screen and (max-height: 950px)
+            
+            .wrapper-info
+
+                .info
+
+                    .wrapper-title
+                        margin-bottom: 0
+
+                    .details
+                        display: none
+
+                    .cta
+                        margin-top: 20px
+
+
+
 
 
 

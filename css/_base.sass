@@ -12,11 +12,12 @@ html
 
 body
     width: 100vw
+    height: 100vh
     margin: 0
     font-family: 'Montserrat', sans-serif
     color: $color_a
     font-size: 18px
-    overflow-x: hidden
+    overflow: hidden
 
 .title
     font-family: 'Antonio', sans-serif
@@ -52,10 +53,19 @@ a
     text-decoration: none
     color: $color_a
 
+.main-section
+    width: 100vw
+    height: 100vh
+    position: absolute
+    top: 0
+    left: 0
+
+
 .fixed-width
     width: 100%
     max-width: 1500px
     margin: 0 auto
+    
 
     @media screen and (max-width: 1550px)
         margin: 0 50px

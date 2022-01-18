@@ -9,6 +9,7 @@ body {
   font-family: "Montserrat", sans-serif;
   color: #929294;
   font-size: 18px;
+  overflow-x: hidden;
 }
 
 .title {
@@ -92,7 +93,7 @@ header nav ul a li {
 header nav ul a:nth-child(2) {
   margin-left: 80px;
 }
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1600px) {
   header {
     max-width: calc(100% - 100px);
     margin: 25px 50px !important;
@@ -133,7 +134,7 @@ main {
   left: 0;
 }
 main .iam .name {
-  font-size: 10vw;
+  font-size: min(10vw, 150px);
   margin: 0;
   padding: 0;
   text-shadow: 0px 0px 4vw black;
@@ -156,7 +157,7 @@ main .socials {
   left: 0;
   top: calc(100vh - 184px - 50px);
   height: 184px;
-  margin-left: 50px;
+  margin-left: calc((100vw - 1500px) / 2);
 }
 main .socials .column {
   flex-direction: column;
@@ -171,6 +172,34 @@ main .socials .column .icon svg {
   width: 100%;
   height: 100%;
   fill: #929294;
+}
+main .scroll {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  right: 0;
+  top: calc(100vh - 211px - 50px);
+  height: 211px;
+  width: 30px;
+  margin-right: calc((100vw - 1500px) / 2 - 15px);
+}
+main .scroll p {
+  transform: rotateZ(90deg);
+  display: block;
+  margin-top: 0;
+}
+main .scroll p.up, main .scroll p.down {
+  padding: 30px;
+}
+@media screen and (max-width: 1600px) {
+  main .socials {
+    margin-left: 50px;
+  }
+  main .scroll {
+    margin-right: 50px;
+  }
 }
 @media screen and (max-width: 800px) {
   main .iam .name {
@@ -191,6 +220,9 @@ main .socials .column .icon svg {
   }
   main .socials .column {
     flex-direction: row;
+  }
+  main .scroll {
+    display: none;
   }
 }
 @media screen and (max-width: 500px) {
@@ -230,6 +262,7 @@ main .socials .column .icon svg {
 .projects .images .wrapper-imgs {
   height: auto;
   flex-direction: column;
+  width: 100%;
 }
 .projects .images .wrapper-imgs.active {
   width: 30%;

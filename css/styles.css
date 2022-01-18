@@ -326,7 +326,7 @@ main .scroll p.up, main .scroll p.down {
   margin-top: 25px;
   padding: 15px 40px;
   box-shadow: 4px 4px 12px 4px rgba(0, 0, 0, 0.5);
-  margin-bottom: 25px;
+  margin-bottom: 500vh;
 }
 
 /*# sourceMappingURL=styles.css.map */

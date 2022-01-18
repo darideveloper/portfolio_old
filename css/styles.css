@@ -7,7 +7,7 @@ body {
   width: 100vw;
   margin: 0;
   font-family: "Montserrat", sans-serif;
-  color: #d1d1d1;
+  color: #929294;
   font-size: 18px;
 }
 
@@ -42,7 +42,7 @@ p.small {
 
 a {
   text-decoration: none;
-  color: #d1d1d1;
+  color: #929294;
 }
 
 .fix-width {
@@ -58,7 +58,7 @@ a {
 }
 
 header {
-  height: 100px;
+  height: 80px;
   margin-top: 25px !important;
   display: flex;
   align-items: center;
@@ -78,7 +78,7 @@ header nav ul {
 header nav ul a li {
   list-style: none;
   text-transform: uppercase;
-  color: #d1d1d1;
+  color: #929294;
   font-size: 18px;
 }
 header nav ul a:nth-child(2) {
@@ -127,6 +127,7 @@ main .iam .name {
   padding: 0;
   text-shadow: 0px 0px 4vw black;
   font-weight: bold;
+  color: #d1d1d1;
 }
 main .iam .uppercase {
   text-transform: uppercase;
@@ -164,7 +165,7 @@ main .socials .column .icon {
 main .socials .column .icon svg {
   width: 100%;
   height: 100%;
-  fill: #d1d1d1;
+  fill: #929294;
 }
 @media screen and (max-width: 800px) {
   main .iam .name {
@@ -200,9 +201,9 @@ main .socials .column .icon svg {
 
 .fixed-bg {
   background: #434449;
-  background: -webkit-radial-gradient(top left, #434449, #141518);
-  background: -moz-radial-gradient(top left, #434449, #141518);
-  background: radial-gradient(to bottom right, #434449, #141518);
+  background: -webkit-radial-gradient(top left, #434449, #0d0d0f);
+  background: -moz-radial-gradient(top left, #434449, #0d0d0f);
+  background: radial-gradient(to bottom right, #434449, #0d0d0f);
   background-size: 100vw 100vh;
   width: 100vw;
   height: 100vh;

@@ -7,6 +7,8 @@ body {
   width: 100vw;
   margin: 0;
   font-family: "Montserrat", sans-serif;
+  color: #d1d1d1;
+  font-size: 18px;
 }
 
 .title {
@@ -109,12 +111,31 @@ header nav ul a:nth-child(2) {
   }
 }
 
-.iam {
-  border: 1px solid red;
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100vw;
   height: 100vh;
   position: absolute;
-  display: none;
+  top: 0;
+  left: 0;
+}
+main .iam .name {
+  font-size: 10vw;
+  margin: 0;
+  padding: 0;
+}
+main .iam .uppercase {
+  text-transform: uppercase;
+}
+main .iam .up {
+  text-align: left;
+  margin-left: 100px;
+}
+main .iam .down {
+  text-align: right;
+  margin-right: 100px;
 }
 
 .fixed-bg {

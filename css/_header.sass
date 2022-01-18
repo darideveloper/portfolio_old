@@ -1,10 +1,14 @@
 header
     height: 80px
-    margin-top: 25px !important
-
     display: flex
     align-items: center
     justify-content: space-between
+    position: fixed
+    left: 0
+    top: 0
+    margin: 25px calc((100vw - 1500px)/2) !important
+    max-width: 1500px
+    width: 100%
 
     .wrapper-img
         width: auto
@@ -25,6 +29,10 @@ header
 
                 &:nth-child(2)
                     margin-left: 80px
+
+    @media screen and (max-width: 1500px)
+        max-width: calc(100% - 100px)
+        margin: 25px 50px !important
 
     @media screen and (max-width: 600px)
         flex-direction: column

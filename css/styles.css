@@ -51,13 +51,13 @@ a {
   color: #929294;
 }
 
-.fix-width {
+.fixed-width {
   width: 100%;
   max-width: 1500px;
   margin: 0 auto;
 }
 @media screen and (max-width: 1550px) {
-  .fix-width {
+  .fixed-width {
     margin: 0 50px;
     width: calc(100% - 100px);
   }
@@ -65,10 +65,15 @@ a {
 
 header {
   height: 80px;
-  margin-top: 25px !important;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  left: 0;
+  top: 0;
+  margin: 25px calc((100vw - 1500px) / 2) !important;
+  max-width: 1500px;
+  width: 100%;
 }
 header .wrapper-img {
   width: auto;
@@ -86,6 +91,12 @@ header nav ul a li {
 }
 header nav ul a:nth-child(2) {
   margin-left: 80px;
+}
+@media screen and (max-width: 1500px) {
+  header {
+    max-width: calc(100% - 100px);
+    margin: 25px 50px !important;
+  }
 }
 @media screen and (max-width: 600px) {
   header {
@@ -141,7 +152,7 @@ main .iam .down {
   margin-right: 100px;
 }
 main .socials {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: calc(100vh - 184px - 50px);
   height: 184px;

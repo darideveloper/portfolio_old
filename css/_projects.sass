@@ -3,10 +3,6 @@
     position: relative
     flex-direction: column
 
-    // * 
-    //     border: 1px solid red
-
-
     .wrapper-images
         width: 100vw
         overflow-x: hidden
@@ -17,6 +13,10 @@
             .wrapper-img
                 width: auto
                 margin: 0
+                transition-duration: 0.5s
+
+                .wrapper-arrow
+                    display: none
 
                 &.active
                     height: 100%
@@ -28,7 +28,10 @@
                     height: 60%
                     filter: grayscale(100%) blur(6px)
                     position: relative
-                    // margin-top: 54px
+                
+                    &:hover
+                        filter: grayscale(100%)
+
 
     .wrapper-info
         width: 100%
@@ -51,7 +54,7 @@
                     color: $color_b
                     display: inline-block
                     text-transform: uppercase
-                    
+
             .details
                 text-align: center
                 line-height: 35px

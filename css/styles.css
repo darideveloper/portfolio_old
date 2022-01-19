@@ -267,6 +267,10 @@ main .scroll p.up, main .scroll p.down {
 .projects .wrapper-images .images .wrapper-img {
   width: auto;
   margin: 0;
+  transition-duration: 0.5s;
+}
+.projects .wrapper-images .images .wrapper-img .wrapper-arrow {
+  display: none;
 }
 .projects .wrapper-images .images .wrapper-img.active {
   height: 100%;
@@ -277,6 +281,9 @@ main .scroll p.up, main .scroll p.down {
   height: 60%;
   filter: grayscale(100%) blur(6px);
   position: relative;
+}
+.projects .wrapper-images .images .wrapper-img.blur:hover {
+  filter: grayscale(100%);
 }
 .projects .wrapper-info {
   width: 100%;

@@ -1,25 +1,6 @@
 .projects
 
-    // Calculate images size
-
-    // $height_wrapper: min(40vh, 420px)
-    // $height_active: calc($height_wrapper)
-    // $height_blur: calc($height_wrapper * 0.6)
-    // $width_active: calc($height_wrapper / 0.75)
-    // $width_blur: calc($height_wrapper / 0.75 * 0.6)
-    // $border: 4px solid red
-
-    // @media screen and (max-width: 950px)
-    //     $height_wrapper: min(40vh, 420px)
-    //     $height_active: calc($height_wrapper * 0.8)
-    //     $height_blur: calc($height_wrapper * 0.5)
-    //     $width_active: calc($height_wrapper / 0.75 * 0.8)
-    //     $width_blur: calc($height_wrapper / 0.75 * 0.5)
-    //     $border: 4px solid blue
-
-    // border: $border 
-    
-    margin-top: 100vh
+    // margin-top: 100vh //Debug
     position: relative
     flex-direction: column
 
@@ -48,6 +29,7 @@
                     min-width: calc(min(40vh) / 0.75 * 0.6)
                     height: calc(min(40vh) * 0.6) 
 
+    
                     img
                         transition-duration: 0.5s
                         position: absolute
@@ -86,6 +68,10 @@
                         width: 70vw
                         min-width: 60vw
                         height: auto
+                        filter: grayscale(60%)
+                    
+                        img
+                            position: initial
 
 
     .wrapper-info

@@ -253,7 +253,6 @@ main .scroll p.up, main .scroll p.down {
 }
 
 .projects {
-  margin-top: 100vh;
   position: relative;
   flex-direction: column;
 }
@@ -316,6 +315,10 @@ main .scroll p.up, main .scroll p.down {
   width: 70vw;
   min-width: 60vw;
   height: auto;
+  filter: grayscale(60%);
+}
+.projects .wrapper-images .images.vertical .wrapper-img.active img, .projects .wrapper-images .images.vertical .wrapper-img.blur img {
+  position: initial;
 }
 .projects .wrapper-info {
   width: 100%;

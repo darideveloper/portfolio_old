@@ -8,9 +8,13 @@ var image_left
 var image_active
 var images_wrapper
 
+// Json data variables
 const projects_data = JSON.parse (data)
 var current_image = 1
 var max_images = projects_data.length
+
+// screen type
+vertical = false
 
 function update_listeners () {
     
@@ -35,6 +39,12 @@ function update_details () {
 
 update_listeners ()
 update_details ()
+
+// Detect screen type
+if (window.screen.height > window.screen.width) {
+    images_wrapper.classList.add ("vertical")
+    vertical = true
+}
 
 // Set default images
 image_active.firstElementChild.setAttribute ("src", projects_data[current_image]["image"])
@@ -91,7 +101,9 @@ async function slide (next, last_image, new_image) {
     // Hide last image and title
     last_image.classList.add ("slide")
     details_title.classList.add ("on-change")
-    await sleep(0.5)
+    if (!vertical) {
+        await sleep(0.5)
+    }
     
     // Hide image and description
     last_image.classList.add ("no-width")
@@ -113,7 +125,9 @@ async function slide (next, last_image, new_image) {
     new_image.classList.remove ("blur")
     new_image.classList.remove ("left")
     new_image.classList.remove ("right")
-    await sleep(0.5)
+    if (!vertical) {
+        await sleep(0.5)
+    }
     
     // Show title
     details_title.classList.remove ("on-change")
@@ -136,12 +150,18 @@ async function slide (next, last_image, new_image) {
 
     // Remove extra classed in ther added image
     selector =  "div.projects > div.wrapper-images > .images > .wrapper-img." + added_image_position
-    console.log (selector)
     added_image_elem = document.querySelector (selector)
-    console.log (added_image_elem)
-    await sleep(0.1)
+    if (vertical) {
+        await sleep(0.02)
+    } else {
+        await sleep(0.1)        
+    }
+
     added_image_elem.classList.remove ("no-width")
-    await sleep(0.5)
+    if (!vertical) {
+        await sleep(0.5)
+    }
+
     added_image_elem.classList.remove ("slide")
 
     // Show description

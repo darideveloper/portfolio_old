@@ -86,14 +86,19 @@ async function slide (next, last_image, new_image) {
         added_image_position = "left"
     }
 
-    update_details ()
     added_image = projects_data[added_image_index]["image"]
-
-    // Hide last image
+    
+    // Hide last image and title
     last_image.classList.add ("slide")
+    details_title.classList.add ("on-change")
     await sleep(0.5)
+    
+    // Hide image and description
     last_image.classList.add ("no-width")
+    details_description.classList.add ("on-change")
     await sleep(0.5)
+
+    update_details ()
 
     // Remove last image
     images_wrapper.removeChild (last_image)
@@ -109,6 +114,9 @@ async function slide (next, last_image, new_image) {
     new_image.classList.remove ("left")
     new_image.classList.remove ("right")
     await sleep(0.5)
+    
+    // Show title
+    details_title.classList.remove ("on-change")
 
     // Create added image to right of left
     added_image_node = '<div class="wrapper-img flex-center blur slide no-width ' + added_image_position + '">'
@@ -135,6 +143,9 @@ async function slide (next, last_image, new_image) {
     added_image_elem.classList.remove ("no-width")
     await sleep(0.5)
     added_image_elem.classList.remove ("slide")
+
+    // Show description
+    details_description.classList.remove ("on-change")
 
     update_listeners ()
 }

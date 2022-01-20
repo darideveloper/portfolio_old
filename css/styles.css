@@ -334,12 +334,18 @@ main .scroll p.up, main .scroll p.down {
   text-transform: uppercase;
   transition-duration: 0.5s;
 }
+.projects .wrapper-info .info .wrapper-title .title.on-change {
+  opacity: 0;
+}
 .projects .wrapper-info .info .details {
   text-align: center;
   line-height: 35px;
   width: 70%;
   margin: 0 auto;
   transition-duration: 0.5s;
+}
+.projects .wrapper-info .info .details.on-change {
+  opacity: 0;
 }
 .projects .wrapper-info .info .cta {
   text-transform: uppercase;

@@ -19,8 +19,12 @@ function update_listeners () {
     image_active = document.querySelector ("div.projects > div.wrapper-images > .images > .wrapper-img.active")
     images_wrapper = document.querySelector ("div.projects > div.wrapper-images > .images")
     
-    image_right.addEventListener ("click", slide_next)
-    image_left.addEventListener ("click", slide_back)
+    image_right.addEventListener ("click", function (e) {
+        slide (next=true, last_image=image_left, new_image=image_right)
+    })
+    image_left.addEventListener ("click", function (e) {
+        slide (next=false, last_image=image_right, new_image=image_left)
+    })
 }
 
 function update_details () {
@@ -42,107 +46,95 @@ function sleep(sec) {
     return new Promise(resolve => setTimeout(resolve, sec * 1000));
 }
 
-async function slide_next () {
-    // Update current image and details
-    current_image += 1
-    if (current_image == max_images) {
-        current_image = 0
+async function slide (next, last_image, new_image) {
+    if (next) {
+        // Slide to next project
+
+        // Update current image and details
+        current_image += 1
+        if (current_image == max_images) {
+            current_image = 0
+        }
+
+        // Get next iumage from data 
+        added_image_index = current_image + 1
+        if (added_image_index == max_images) {
+            added_image_index = 0
+        }
+
+        // Direction variables
+        direction = "left"
+        added_image_position = "right"
+        
+    } else {
+        // Slide to back project
+
+        // Update current image and details
+        current_image -= 1
+        if (current_image < 0) {
+            current_image = max_images - 1
+        }
+
+        // Get next iumage from data 
+        added_image_index = current_image - 1
+        if (added_image_index < 0) {
+            added_image_index = max_images - 1
+        }
+
+        // Direction variables
+        direction = "right"
+        added_image_position = "left"
     }
+
     update_details ()
+    added_image = projects_data[added_image_index]["image"]
 
-    // Get next iumage from data 
-    next_image_index = current_image + 1
-    if (next_image_index == max_images) {
-        next_image_index = 0
-    }
-    next_image = projects_data[next_image_index]["image"]
-
-    // Hide left image
-    image_left.classList.add ("slide")
+    // Hide last image
+    last_image.classList.add ("slide")
     await sleep(0.5)
-    image_left.classList.add ("no-width")
+    last_image.classList.add ("no-width")
     await sleep(0.5)
 
-    // Remove left image
-    images_wrapper.removeChild (image_left)
-
-    // Move active image to left
-    image_active.classList.remove ("active")
-    image_active.classList.add ("blur")
-    image_active.classList.add ("left")
-
-    // Convert right image to active image
-    image_right.classList.add ("active")
-    image_right.classList.remove ("blur")
-    image_right.classList.remove ("right")
-    await sleep(0.5)
-
-    // Add new image to right
-    new_image = ""
-    new_image += '<div class="wrapper-img flex-center blur right slide no-width">'
-    new_image += ' <img src="' + next_image + '" alt="project banner">'
-    new_image += '</div>'
-    images_wrapper.innerHTML += new_image
-
-    image_right = document.querySelector ("div.projects > div.wrapper-images > .images > .wrapper-img.right")
-    await sleep(0.1)
-    image_right.classList.remove ("no-width")
-    await sleep(0.5)
-    image_right.classList.remove ("slide")
-
-    update_listeners ()
-
-}
-
-async function slide_back () {
-    current_image -= 1
-    if (current_image < 0) {
-        current_image = max_images - 1
-    }
-    update_details ()
-
-    // Get next iumage from data 
-    last_image_index = current_image - 1
-    if (last_image_index < 0) {
-        last_image_index = max_images - 1
-    }
-    last_image = projects_data[last_image_index]["image"]
-
-    // Hide right image
-    image_right.classList.add ("slide")
-    await sleep(0.5)
-    image_right.classList.add ("no-width")
-    await sleep(0.5)
-
-    // Remove right image
-    images_wrapper.removeChild (image_right)
+    // Remove last image
+    images_wrapper.removeChild (last_image)
 
     // Move active image to right
     image_active.classList.remove ("active")
     image_active.classList.add ("blur")
-    image_active.classList.add ("right")
+    image_active.classList.add (direction)
 
     // Convert left image to active image
-    image_left.classList.add ("active")
-    image_left.classList.remove ("blur")
-    image_left.classList.remove ("left")
+    new_image.classList.add ("active")
+    new_image.classList.remove ("blur")
+    new_image.classList.remove ("left")
+    new_image.classList.remove ("right")
     await sleep(0.5)
 
-    // Add new image to left
-    last_inner = images_wrapper.innerHTML
-    new_image = ""
-    new_image += '<div class="wrapper-img flex-center blur left slide no-width">'
-    new_image += ' <img src="' + last_image + '" alt="project banner">'
-    new_image += '</div>'
-    images_wrapper.innerHTML = new_image
-    images_wrapper.innerHTML += last_inner
+    // Create added image to right of left
+    added_image_node = '<div class="wrapper-img flex-center blur slide no-width ' + added_image_position + '">'
+    added_image_node += ' <img src="' + added_image + '" alt="project banner">'
+    added_image_node += '</div>'
+    
+    // Insert added image
+    if (next) {
+        // Add image to the end
+        images_wrapper.innerHTML += added_image_node
+    } else {
+        // Add image to the beginning
+        last_inner = images_wrapper.innerHTML
+        images_wrapper.innerHTML = added_image_node
+        images_wrapper.innerHTML += last_inner
+    }
 
-    image_left = document.querySelector ("div.projects > div.wrapper-images > .images > .wrapper-img.left")
+    // Remove extra classed in ther added image
+    selector =  "div.projects > div.wrapper-images > .images > .wrapper-img." + added_image_position
+    console.log (selector)
+    added_image_elem = document.querySelector (selector)
+    console.log (added_image_elem)
     await sleep(0.1)
-    image_left.classList.remove ("no-width")
+    added_image_elem.classList.remove ("no-width")
     await sleep(0.5)
-    image_left.classList.remove ("slide")
+    added_image_elem.classList.remove ("slide")
 
     update_listeners ()
-
 }

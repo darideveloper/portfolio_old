@@ -1,10 +1,8 @@
 var scrollableElement = document.body;
-let windows_height = window.screen.height;
 let current_screen = 1
 let max_screens = 3
-scrollableElement.addEventListener('wheel', checkScrollDirection);
 
-console.log (windows_height)
+scrollableElement.addEventListener('wheel', checkScrollDirection);
 
 function checkScrollDirection(event) {
     if (checkScrollDirectionIsUp(event)) {
@@ -28,7 +26,7 @@ function checkScrollDirection(event) {
     console.log (current_screen)
 
     // Made scroll
-    window.scroll(0, windows_height * (current_screen - 1))
+    window.scroll(0, window.screen.height * (current_screen - 1))
   }
   
 function checkScrollDirectionIsUp(event) {

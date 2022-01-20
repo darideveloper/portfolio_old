@@ -1,4 +1,24 @@
 .projects
+
+    // Calculate images size
+
+    // $height_wrapper: min(40vh, 420px)
+    // $height_active: calc($height_wrapper)
+    // $height_blur: calc($height_wrapper * 0.6)
+    // $width_active: calc($height_wrapper / 0.75)
+    // $width_blur: calc($height_wrapper / 0.75 * 0.6)
+    // $border: 4px solid red
+
+    // @media screen and (max-width: 950px)
+    //     $height_wrapper: min(40vh, 420px)
+    //     $height_active: calc($height_wrapper * 0.8)
+    //     $height_blur: calc($height_wrapper * 0.5)
+    //     $width_active: calc($height_wrapper / 0.75 * 0.8)
+    //     $width_blur: calc($height_wrapper / 0.75 * 0.5)
+    //     $border: 4px solid blue
+
+    // border: $border 
+    
     margin-top: 100vh
     position: relative
     flex-direction: column
@@ -8,29 +28,36 @@
         overflow-x: hidden
 
         .images
-            height: min(40vh, 420px)
+            height: 40vh
 
             .wrapper-img
-                width: auto
                 margin: 0
                 transition-duration: 0.5s
 
-                .wrapper-arrow
-                    display: none
-
                 &.active
-                    height: 100%
                     filter: grayscale(60%)
-                    
                     margin: 20px
+                    width: calc(min(40vh) / 0.75 * 1)
+                    min-width: calc(min(40vh) / 0.75 * 1)
+                    height: calc(min(40vh) * 1)
 
                 &.blur
-                    height: 60%
                     filter: grayscale(100%) blur(6px)
-                    position: relative
+                    width: calc(min(40vh) / 0.75 * 0.6)
+                    min-width: calc(min(40vh) / 0.75 * 0.6)
+                    height: calc(min(40vh) * 0.6)            
                 
                     &:hover
                         filter: grayscale(100%)
+
+            &.vertical
+                height: auto
+
+                .wrapper-img
+                    &.active, &.blur
+                        width: 70vw
+                        min-width: 60vw
+                        height: auto
 
 
     .wrapper-info
@@ -45,7 +72,7 @@
             .wrapper-title
                 width: 100%
                 height: auto
-                margin-bottom: 25px
+                margin: 20px 0
 
                 .title
                     font-size: 80px
@@ -75,22 +102,6 @@
                     width: 60%
 
     @media screen and (max-width: 1250px)
-
-        .wrapper-images
-            .images
-                width: 100vw
-                overflow-x: hidden
-
-                .wrapper-img
-
-                    &.active
-                        width: calc(40vh / 0.75)
-                        min-width: calc(40vh / 0.75)
-
-                    &.blur
-                        width: calc(40vh * 0.6 / 0.75)
-                        min-width: calc(40vh * 0.6 / 0.75)
-
 
         @media screen and (max-height: 550px)
             
@@ -124,18 +135,10 @@
                         margin-top: 20px
 
     @media screen and (max-width: 950px)
-        .wrapper-images
-            .images
-                .wrapper-img
-                    &.active, &.blur
-                        height: 80%
-                        width: calc(40vh * 0.8 / 0.75)
-                        min-width: calc(40vh * 0.8 / 0.75)
 
         .wrapper-info
             .info
                 .wrapper-title
-                    margin-top: 0
                     
                     .title
                         font-size: 8vw
@@ -179,15 +182,6 @@
                         margin-top: 20px
 
     @media screen and (max-width: 650px)
-        .wrapper-images
-            .images
-                height: auto
-
-                .wrapper-img
-                    &.active, &.blur
-                        width: 60vw
-                        min-width: 60vw
-                        height: calc(60vw / 0.75)
 
         @media screen and (max-height: 1120px)
             

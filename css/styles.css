@@ -262,28 +262,35 @@ main .scroll p.up, main .scroll p.down {
   overflow-x: hidden;
 }
 .projects .wrapper-images .images {
-  height: min(40vh, 420px);
+  height: 40vh;
 }
 .projects .wrapper-images .images .wrapper-img {
-  width: auto;
   margin: 0;
   transition-duration: 0.5s;
 }
-.projects .wrapper-images .images .wrapper-img .wrapper-arrow {
-  display: none;
-}
 .projects .wrapper-images .images .wrapper-img.active {
-  height: 100%;
   filter: grayscale(60%);
   margin: 20px;
+  width: 53.3333333333vh;
+  min-width: 53.3333333333vh;
+  height: 40vh;
 }
 .projects .wrapper-images .images .wrapper-img.blur {
-  height: 60%;
   filter: grayscale(100%) blur(6px);
-  position: relative;
+  width: 32vh;
+  min-width: 32vh;
+  height: 24vh;
 }
 .projects .wrapper-images .images .wrapper-img.blur:hover {
   filter: grayscale(100%);
+}
+.projects .wrapper-images .images.vertical {
+  height: auto;
+}
+.projects .wrapper-images .images.vertical .wrapper-img.active, .projects .wrapper-images .images.vertical .wrapper-img.blur {
+  width: 70vw;
+  min-width: 60vw;
+  height: auto;
 }
 .projects .wrapper-info {
   width: 100%;
@@ -291,7 +298,7 @@ main .scroll p.up, main .scroll p.down {
 .projects .wrapper-info .info .wrapper-title {
   width: 100%;
   height: auto;
-  margin-bottom: 25px;
+  margin: 20px 0;
 }
 .projects .wrapper-info .info .wrapper-title .title {
   font-size: 80px;
@@ -318,20 +325,6 @@ main .scroll p.up, main .scroll p.down {
     width: 60%;
   }
 }
-@media screen and (max-width: 1250px) {
-  .projects .wrapper-images .images {
-    width: 100vw;
-    overflow-x: hidden;
-  }
-  .projects .wrapper-images .images .wrapper-img.active {
-    width: 53.3333333333vh;
-    min-width: 53.3333333333vh;
-  }
-  .projects .wrapper-images .images .wrapper-img.blur {
-    width: 32vh;
-    min-width: 32vh;
-  }
-}
 @media screen and (max-width: 1250px) and (max-height: 550px) {
   .projects .wrapper-info .info .wrapper-title {
     margin-bottom: 0;
@@ -355,14 +348,6 @@ main .scroll p.up, main .scroll p.down {
   }
 }
 @media screen and (max-width: 950px) {
-  .projects .wrapper-images .images .wrapper-img.active, .projects .wrapper-images .images .wrapper-img.blur {
-    height: 80%;
-    width: 42.6666666667vh;
-    min-width: 42.6666666667vh;
-  }
-  .projects .wrapper-info .info .wrapper-title {
-    margin-top: 0;
-  }
   .projects .wrapper-info .info .wrapper-title .title {
     font-size: 8vw;
   }
@@ -392,16 +377,6 @@ main .scroll p.up, main .scroll p.down {
   }
   .projects .wrapper-info .info .cta {
     margin-top: 20px;
-  }
-}
-@media screen and (max-width: 650px) {
-  .projects .wrapper-images .images {
-    height: auto;
-  }
-  .projects .wrapper-images .images .wrapper-img.active, .projects .wrapper-images .images .wrapper-img.blur {
-    width: 60vw;
-    min-width: 60vw;
-    height: 80vw;
   }
 }
 @media screen and (max-width: 650px) and (max-height: 1120px) {

@@ -267,6 +267,7 @@ main .scroll p.up, main .scroll p.down {
 .projects .wrapper-images .images .wrapper-img {
   margin: 0;
   transition-duration: 0.5s;
+  position: relative;
 }
 .projects .wrapper-images .images .wrapper-img.active {
   filter: grayscale(60%);
@@ -281,8 +282,32 @@ main .scroll p.up, main .scroll p.down {
   min-width: 32vh;
   height: 24vh;
 }
+.projects .wrapper-images .images .wrapper-img.blur img {
+  transition-duration: 0.5s;
+  position: absolute;
+  top: 0;
+}
+.projects .wrapper-images .images .wrapper-img.blur.left img {
+  left: 0;
+}
+.projects .wrapper-images .images .wrapper-img.blur.right img {
+  right: 0;
+}
 .projects .wrapper-images .images .wrapper-img.blur:hover {
   filter: grayscale(100%);
+}
+.projects .wrapper-images .images .wrapper-img.blur.slide {
+  opacity: 0;
+}
+.projects .wrapper-images .images .wrapper-img.blur.slide.left img {
+  left: -50px;
+}
+.projects .wrapper-images .images .wrapper-img.blur.slide.right img {
+  right: -50px;
+}
+.projects .wrapper-images .images .wrapper-img.blur.slide.no-width {
+  width: 0;
+  min-width: 0;
 }
 .projects .wrapper-images .images.vertical {
   height: auto;

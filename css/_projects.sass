@@ -33,6 +33,7 @@
             .wrapper-img
                 margin: 0
                 transition-duration: 0.5s
+                position: relative
 
                 &.active
                     filter: grayscale(60%)
@@ -45,10 +46,37 @@
                     filter: grayscale(100%) blur(6px)
                     width: calc(min(40vh) / 0.75 * 0.6)
                     min-width: calc(min(40vh) / 0.75 * 0.6)
-                    height: calc(min(40vh) * 0.6)            
+                    height: calc(min(40vh) * 0.6) 
+
+                    img
+                        transition-duration: 0.5s
+                        position: absolute
+                        top: 0
+                        
+                    &.left
+                        img
+                            left: 0
+                    &.right
+                        img
+                            right: 0
                 
                     &:hover
                         filter: grayscale(100%)
+
+                    &.slide
+                        opacity: 0
+
+                        &.left
+                            img
+                                left: -50px
+                        &.right
+                            img
+                                right: -50px
+
+
+                        &.no-width
+                            width: 0
+                            min-width: 0
 
             &.vertical
                 height: auto

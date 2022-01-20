@@ -36,6 +36,6 @@ function checkScrollDirectionIsUp(event) {
     return event.deltaY < 0;
 }
 
-window.addEventListener('scroll', function(e) {
-    return None
-})
+// window.addEventListener('scroll', function(e) {
+//     return none
+// })

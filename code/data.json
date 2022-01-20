@@ -1,0 +1,22 @@
+data = `[
+    {
+        "title": "bakery shop",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet nisl lectus. Nulla facilisi. Integer tristique, tellus ac ultricies iaculis, dolor lorem dignissim justo, in posuere nulla",
+        "image": "imgs/bakery-shop.png"
+    },
+    {
+        "title": "travel agency",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet nisl lectus. Nulla facilisi. Integer tristique, tellus ac ultricies iaculis, dolor lorem dignissim justo, in posuere nulla",
+        "image": "imgs/travel-agency.png"
+    },
+    {
+        "title": "yoga studio",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet nisl lectus. Nulla facilisi. Integer tristique, tellus ac ultricies iaculis, dolor lorem dignissim justo, in posuere nulla",
+        "image": "imgs/yoga-studio.png"
+    },
+    {
+        "title": "joe manfred",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet nisl lectus. Nulla facilisi. Integer tristique, tellus ac ultricies iaculis, dolor lorem dignissim justo, in posuere nulla",
+        "image": "imgs/joe-manfred.png"
+    }
+]`;

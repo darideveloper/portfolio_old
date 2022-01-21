@@ -16,6 +16,9 @@ var max_images = projects_data.length
 // screen type
 vertical = false
 
+// Salide status control variable
+sliding = false
+
 function update_listeners () {
     
     image_right = document.querySelector ("div.projects > div.wrapper-images > .images > .wrapper-img.right")
@@ -57,6 +60,10 @@ function sleep(sec) {
 }
 
 async function slide (next, last_image, new_image) {
+
+    // Update status
+    sliding = true
+
     if (next) {
         // Slide to next project
 
@@ -168,4 +175,7 @@ async function slide (next, last_image, new_image) {
     details_description.classList.remove ("on-change")
 
     update_listeners ()
+
+    // Update status
+    sliding = false
 }

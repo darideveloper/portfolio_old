@@ -157,7 +157,7 @@ main .iam .down {
 main .socials {
   position: fixed;
   left: 0;
-  top: calc(100vh - 184px - 50px);
+  top: calc(100vh - 184px - 25px);
   height: 184px;
   margin-left: calc((100vw - 1500px) / 2);
 }
@@ -214,7 +214,7 @@ main .scroll p.up, main .scroll p.down {
     margin-right: 20px;
   }
   main .socials {
-    top: calc(100vh - 50px - 50px);
+    top: calc(100vh - 50px - 25px);
     width: 100%;
     margin: 0;
     padding: 0;
@@ -235,6 +235,7 @@ main .scroll p.up, main .scroll p.down {
 @media screen and (max-width: 400px) {
   main .socials {
     flex-direction: column;
+    top: calc(100vh - 90px - 25px);
   }
 }
 

@@ -1,3 +1,33 @@
+@mixin hide_details()
+    .wrapper-info
+
+        .info
+
+            .wrapper-title
+                margin-bottom: 0
+
+            .details
+                display: none
+
+            .cta
+                margin-top: 20px
+
+@mixin show_details()
+    .wrapper-info
+
+        .info
+
+            .wrapper-title
+                margin-bottom: 25px
+
+            .details
+                display: block
+
+            .cta
+                margin-top: 25px
+
+    
+    
 .projects
 
     // margin-top: 100vh //Debug
@@ -123,38 +153,20 @@
                 .details
                     width: 60%
 
+        @media screen and (max-height: 550px)
+            @include hide_details
+
+
     @media screen and (max-width: 1250px)
 
         @media screen and (max-height: 600px)
+            @include hide_details
             
-            .wrapper-info
-
-                .info
-
-                    .wrapper-title
-                        margin-bottom: 0
-
-                    .details
-                        display: none
-
-                    .cta
-                        margin-top: 20px
 
     @media screen and (max-width: 1050px)
         @media screen and (max-height: 650px)
-            
-            .wrapper-info
-
-                .info
-
-                    .wrapper-title
-                        margin-bottom: 0
-
-                    .details
-                        display: none
-
-                    .cta
-                        margin-top: 20px
+            @include hide_details
+    
 
     @media screen and (max-width: 950px)
 
@@ -166,20 +178,8 @@
                         font-size: 8vw
 
 
-        @media screen and (max-height: 700px)
-            
-            .wrapper-info
-
-                .info
-
-                    .wrapper-title
-                        margin-bottom: 0
-
-                    .details
-                        display: none
-
-                    .cta
-                        margin-top: 20px
+        @media screen and (max-height: 780px)
+            @include hide_details
 
     @media screen and (max-width: 800px)
 
@@ -189,68 +189,20 @@
                     width: 90%
 
         @media screen and (max-height: 850px)
-            
-            .wrapper-info
-
-                .info
-
-                    .wrapper-title
-                        margin-bottom: 0
-
-                    .details
-                        display: none
-
-                    .cta
-                        margin-top: 20px
+            @include hide_details
 
     @media screen and (max-width: 650px)
+        @include show_details
 
-        @media screen and (max-height: 1120px)
-            
-            .wrapper-info
-
-                .info
-
-                    .wrapper-title
-                        margin-bottom: 0
-
-                    .details
-                        display: none
-
-                    .cta
-                        margin-top: 20px
+        @media screen and (max-height: 800px)
+            @include hide_details
 
     @media screen and (max-width: 425px)
 
-        .wrapper-info
+        @include show_details
 
-            .info
-
-                .wrapper-title
-                    margin-bottom: 25px
-
-                .details
-                    display: block
-
-                .cta
-                    margin-top: 25px
-
-
-        @media screen and (max-height: 950px)
-            
-            .wrapper-info
-
-                .info
-
-                    .wrapper-title
-                        margin-bottom: 0
-
-                    .details
-                        display: none
-
-                    .cta
-                        margin-top: 20px
-
+        @media screen and (max-height: 830px)
+            @include hide_details
 
 
 

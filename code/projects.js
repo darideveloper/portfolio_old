@@ -1,6 +1,9 @@
+// Section
+const projects = document.querySelector (".projects") 
+
 // Details elements
-var details_title = document.querySelector ("div.projects > div.wrapper-info > .info h2")
-var details_description = document.querySelector ("div.projects > div.wrapper-info > .info p")
+const details_title = document.querySelector ("div.projects > div.wrapper-info > .info h2")
+const details_description = document.querySelector ("div.projects > div.wrapper-info > .info p")
 
 // Images elements
 var image_right
@@ -11,13 +14,13 @@ var images_wrapper
 // Json data variables
 const projects_data = JSON.parse (data)
 var current_image = 1
-var max_images = projects_data.length
+const max_images = projects_data.length
 
 // screen type
-vertical = false
+var vertical = false
 
 // Salide status control variable
-sliding = false
+var sliding = false
 
 function update_listeners () {
     
@@ -46,7 +49,11 @@ update_details ()
 // Detect screen type
 if (window.screen.height > window.screen.width) {
     images_wrapper.classList.add ("vertical")
+    projects.classList.add ("vertical")
     vertical = true
+} else {
+    images_wrapper.classList.add ("horizontal")
+    projects.classList.add ("horizontal")
 }
 
 // Set default images

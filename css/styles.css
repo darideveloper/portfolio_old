@@ -362,6 +362,17 @@ main .scroll p.up, main .scroll p.down {
     width: 60%;
   }
 }
+@media screen and (max-width: 1500px) and (max-height: 550px) {
+  .projects .wrapper-info .info .wrapper-title {
+    margin-bottom: 0;
+  }
+  .projects .wrapper-info .info .details {
+    display: none;
+  }
+  .projects .wrapper-info .info .cta {
+    margin-top: 20px;
+  }
+}
 @media screen and (max-width: 1250px) and (max-height: 600px) {
   .projects .wrapper-info .info .wrapper-title {
     margin-bottom: 0;
@@ -389,7 +400,7 @@ main .scroll p.up, main .scroll p.down {
     font-size: 8vw;
   }
 }
-@media screen and (max-width: 950px) and (max-height: 700px) {
+@media screen and (max-width: 950px) and (max-height: 780px) {
   .projects .wrapper-info .info .wrapper-title {
     margin-bottom: 0;
   }
@@ -416,7 +427,18 @@ main .scroll p.up, main .scroll p.down {
     margin-top: 20px;
   }
 }
-@media screen and (max-width: 650px) and (max-height: 1120px) {
+@media screen and (max-width: 650px) {
+  .projects .wrapper-info .info .wrapper-title {
+    margin-bottom: 25px;
+  }
+  .projects .wrapper-info .info .details {
+    display: block;
+  }
+  .projects .wrapper-info .info .cta {
+    margin-top: 25px;
+  }
+}
+@media screen and (max-width: 650px) and (max-height: 800px) {
   .projects .wrapper-info .info .wrapper-title {
     margin-bottom: 0;
   }
@@ -438,7 +460,7 @@ main .scroll p.up, main .scroll p.down {
     margin-top: 25px;
   }
 }
-@media screen and (max-width: 425px) and (max-height: 950px) {
+@media screen and (max-width: 425px) and (max-height: 830px) {
   .projects .wrapper-info .info .wrapper-title {
     margin-bottom: 0;
   }

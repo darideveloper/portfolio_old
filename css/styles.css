@@ -169,7 +169,7 @@ header nav ul a:nth-child(2) {
 .contact .form form {
   margin: 0;
 }
-.contact .form input {
+.contact .form form input {
   display: block;
   width: 400px;
   background-color: rgba(0, 0, 0, 0);
@@ -182,12 +182,12 @@ header nav ul a:nth-child(2) {
   transition-duration: 0.3s;
   color: #d1d1d1;
 }
-.contact .form input:focus {
+.contact .form form input:focus {
   outline: none;
   border-bottom: 2px solid #929294;
   font-size: 20px;
 }
-.contact .form input[type=submit] {
+.contact .form form input[type=submit] {
   border: none;
   color: #d1d1d1;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7), -3px -3px 6px rgba(0, 0, 0, 0.3);
@@ -196,6 +196,121 @@ header nav ul a:nth-child(2) {
   margin-bottom: 0;
   padding: 5px 30px;
   height: auto;
+}
+@media screen and (min-width: 1300px) and (max-height: 650px) {
+  .contact .form .inputs {
+    height: 180px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    /* width */
+  }
+  .contact .form .inputs::-webkit-scrollbar {
+    display: none;
+  }
+}
+@media screen and (min-width: 1300px) and (max-height: 600px) {
+  .contact .info {
+    display: none;
+  }
+  .contact .form {
+    margin: 0;
+  }
+}
+@media screen and (max-width: 1299px) {
+  .contact .info {
+    max-width: 30vw;
+  }
+}
+@media screen and (max-width: 1299px) and (max-height: 650px) {
+  .contact .info {
+    display: none;
+  }
+  .contact .form {
+    margin: 0;
+  }
+  .contact form .inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .contact form .inputs input {
+    width: calc(100% - 19px);
+    max-width: calc(100% - 20px);
+    margin: 10px;
+  }
+}
+@media screen and (max-width: 1150px) {
+  .contact .info {
+    margin-right: 40px;
+  }
+}
+@media screen and (max-width: 1150px) and (max-height: 550px) {
+  .contact .form {
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .contact .info {
+    margin-right: 80px;
+  }
+  .contact .info p {
+    display: none;
+  }
+}
+@media screen and (max-width: 980px) {
+  .contact .info {
+    display: none;
+  }
+  .contact .form {
+    width: 50vw;
+    max-width: 50vw;
+  }
+  .contact .form form input {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .contact .form {
+    width: calc(70vw - 100px);
+    max-width: calc(70vw - 100px);
+  }
+  .contact .form form .inputs {
+    display: block;
+  }
+}
+@media screen and (max-width: 800px) and (max-height: 680px) {
+  .contact .form .inputs {
+    height: 120px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    /* width */
+  }
+  .contact .form .inputs::-webkit-scrollbar {
+    display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  .contact .form {
+    width: calc(90vw - 100px);
+    max-width: calc(90vw - 100px);
+  }
+}
+@media screen and (max-width: 500px) and (max-height: 780px) {
+  .contact .form .inputs {
+    height: 120px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    /* width */
+  }
+  .contact .form .inputs::-webkit-scrollbar {
+    display: none;
+  }
+}
+@media screen and (max-width: 380px) {
+  .contact .form {
+    width: calc(90vw - 30px);
+    max-width: calc(90vw - 30px);
+    padding: 15px;
+  }
 }
 
 main .iam .name {

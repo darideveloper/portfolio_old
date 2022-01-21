@@ -1,3 +1,22 @@
+@mixin hide_info()
+    .info
+        display: none
+
+    .form
+        margin: 0
+
+@mixin scroll_form ($height:180px)
+    .form
+        .inputs
+            height: $height
+            overflow-y: scroll
+            overflow-x: hidden
+
+            /* width */
+            &::-webkit-scrollbar 
+                display: none
+        
+    
 .contact
     text-align: center
     justify-content: center
@@ -23,44 +42,112 @@
         form
             margin: 0
 
-        input
-            display: block
-            width: 400px
-            background-color: rgba(0,0,0,0)
-            border: none
-            border-bottom: 1px solid $color_a
-            font-size: 15px
-            margin-top: 30px
-            height: 30px
-            line-height: 30px
-            transition-duration: 0.3s
-            color: $color_b
+            input
+                display: block
+                width: 400px
+                background-color: rgba(0,0,0,0)
+                border: none
+                border-bottom: 1px solid $color_a
+                font-size: 15px
+                margin-top: 30px
+                height: 30px
+                line-height: 30px
+                transition-duration: 0.3s
+                color: $color_b
 
-            &:focus
-                outline: none
-                border-bottom: 2px solid $color_a
-                font-size: 20px
+                &:focus
+                    outline: none
+                    border-bottom: 2px solid $color_a
+                    font-size: 20px
 
-        input[type="submit"]
-            border: none
-            color: $color_b
-            box-shadow: 5px 5px 10px rgba(black, 0.7), -3px -3px 6px rgba(black, 0.3)
-            width: auto
-            margin: 30px auto
-            margin-bottom: 0
-            padding: 5px 30px
-            height: auto
+            input[type="submit"]
+                border: none
+                color: $color_b
+                box-shadow: 5px 5px 10px rgba(black, 0.7), -3px -3px 6px rgba(black, 0.3)
+                width: auto
+                margin: 30px auto
+                margin-bottom: 0
+                padding: 5px 30px
+                height: auto
 
-    // @media screen and (min-width: 1300px)
-    //     .form
-    //         .inputs
-    //             height: 180px
-    //             overflow-y: scroll
-    //             overflow-x: hidden
+    @media screen and (min-width: 1300px)
+        @media screen and (max-height: 650px)
+            @include scroll_form
+            
+        @media screen and (max-height: 600px)
+            @include hide_info
+            
 
-    //             /* width */
-    //             &::-webkit-scrollbar 
-    //                 display: none
+    @media screen and (max-width: 1299px)
+        .info 
+            max-width: calc(30vw)
 
+        @media screen and (max-height: 650px)
+            @include hide_info
 
+            form
+                .inputs
+                    display: grid
+                    grid-template-columns: 1fr 1fr
+
+                    input
+                        width: calc(100% - 19px)
+                        max-width: calc(100% - 20px)
+                        margin: 10px
+            
+        // @media screen and (max-height: 550px)
+        //     @include scroll_form
+    
+    @media screen and (max-width: 1150px)
+        .info
+            margin-right: 40px
+
+        @media screen and (max-height: 550px)
+            .form
+                padding: 20px
+
+    @media screen and (max-width: 1050px)
+        .info
+            margin-right: 80px
+
+            p
+                display: none
+
+    @media screen and (max-width: 980px)
+        .info
+            display: none
+
+        .form
+            width: 50vw
+            max-width: 50vw
+
+            form
+                input
+                    width: 100%
+
+    @media screen and (max-width: 800px)
+        .form
+            width: calc(70vw - 100px)
+            max-width: calc(70vw - 100px)
+
+            form
+                .inputs
+                    display: block
+
+        @media screen and (max-height: 680px)
+            @include scroll_form(120px)
+
+    @media screen and (max-width: 500px)
+        .form
+            width: calc(90vw - 100px)
+            max-width: calc(90vw - 100px)
+
+        @media screen and (max-height: 780px)
+            @include scroll_form(120px)
+
+    @media screen and (max-width: 380px)
+        .form
+            width: calc(90vw - 30px)
+            max-width: calc(90vw - 30px)
+            padding: 15px
             

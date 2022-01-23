@@ -389,7 +389,7 @@ main .scroll {
   flex-direction: column;
   position: fixed;
   right: 0;
-  top: calc(100vh - 211px - 50px);
+  top: calc(100vh - 211px);
   height: 211px;
   width: 30px;
   margin-right: calc((100vw - 1500px) / 2 - 15px);

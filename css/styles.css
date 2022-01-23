@@ -101,23 +101,42 @@ header {
   margin: 25px calc((100vw - 1500px) / 2) !important;
   max-width: 1500px;
   width: 100%;
+  z-index: 1;
 }
 header .wrapper-img {
   width: auto;
   height: 100%;
+  cursor: pointer;
+}
+header .wrapper-img img {
+  transition-duration: 0.5s;
+}
+header .wrapper-img:hover img {
+  width: auto;
+  height: 90%;
 }
 header nav ul {
   margin: 0;
   padding: 0;
 }
+header nav ul a {
+  transition-duration: 0.5s;
+  opacity: 0.4;
+  display: block;
+  padding: 40px;
+}
+header nav ul a:hover {
+  text-shadow: 0px 0px 20px #739cc4;
+  opacity: 1;
+}
 header nav ul a li {
   list-style: none;
   text-transform: uppercase;
-  color: #929294;
+  color: #fff;
   font-size: 18px;
 }
 header nav ul a:nth-child(2) {
-  margin-left: 80px;
+  padding-right: 0;
 }
 @media screen and (max-width: 1600px) {
   header {

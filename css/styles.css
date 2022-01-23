@@ -81,6 +81,15 @@ a {
   }
 }
 
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 header {
   height: 80px;
   display: flex;
@@ -144,6 +153,7 @@ header nav ul a:nth-child(2) {
 }
 
 .contact {
+  margin-top: 200vh;
   text-align: center;
   justify-content: center;
 }
@@ -364,14 +374,25 @@ main .scroll {
   height: 211px;
   width: 30px;
   margin-right: calc((100vw - 1500px) / 2 - 15px);
+  z-index: 1;
 }
 main .scroll p {
   transform: rotateZ(90deg);
   display: block;
   margin-top: 0;
+  transition-duration: 0.5s;
 }
 main .scroll p.up, main .scroll p.down {
   padding: 30px;
+  cursor: pointer;
+}
+main .scroll p.up:hover, main .scroll p.down:hover {
+  text-shadow: 0px 0px 5px #739cc4;
+  font-weight: bold;
+}
+main .scroll p.transparent {
+  opacity: 0;
+  cursor: default;
 }
 @media screen and (max-width: 1600px) {
   main .socials {
@@ -432,6 +453,7 @@ main .scroll p.up, main .scroll p.down {
 }
 
 .projects {
+  margin-top: 100vh;
   position: relative;
   flex-direction: column;
 }

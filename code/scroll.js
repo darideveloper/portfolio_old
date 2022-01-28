@@ -2,38 +2,39 @@ const scrollableElement = document.body;
 const scroll_button_up = document.querySelector ("main .scroll .up")
 const scroll_button_down = document.querySelector ("main .scroll .down")
 const header_logo = document.querySelector ("header .logo")
-const header_projects = document.querySelector ("header .menu ul a:nth-child(1)")
-const header_contact = document.querySelector ("header .menu ul a:nth-child(2)")
+const header_projects = document.querySelector ("header .menu ul i:nth-child(1)")
+const header_contact = document.querySelector ("header .menu ul i:nth-child(2)")
 const section_main = document.querySelector ("main.main-section > .iam")
 const section_projects = document.querySelector (".main-section.projects")
 const section_contact = document.querySelector (".main-section.contact")
+let last_screen = 0
 let current_screen = 1
 let max_screens = 3
 
-scrollableElement.addEventListener('wheel', function (event) {
+scrollableElement.addEventListener('wheel', async function (event) {
     if (scroll_up(event)) {
         // Scroll up
-        decress_screen_counter ()
+        await decress_screen_counter ()
     } else {
         // Scroll down
-        incress_screen_counter ()
+        await incress_screen_counter ()
     }
 
     change_screen ()
 })
 
-scroll_button_up.addEventListener ("click", function (e) {
+scroll_button_up.addEventListener ("click", async function (e) {
     // Click in scroll up button: update counters and screen
     if ( !scroll_button_up.classList.contains ("transparent")) {
-        decress_screen_counter ()
+        await decress_screen_counter ()
+        change_screen ()
     }
-    change_screen ()
 })
 
-scroll_button_down.addEventListener ("click", function (e) {
+scroll_button_down.addEventListener ("click", async function (e) {
     // Click in scroll down button: update counters and screen
     if ( !scroll_button_down.classList.contains ("transparent")) {
-        incress_screen_counter ()
+        await incress_screen_counter ()
         change_screen ()
     }
 })
@@ -42,43 +43,34 @@ header_logo.addEventListener ("click", function (e) {
     go_contact ()
 })
 
-header_projects.addEventListener ("click", function (e) {
-    go_projects ()    
-})
 
-header_contact.addEventListener ("click", function (e) {
-    go_contact ()
-})
+async function decress_screen_counter () {
 
-function go_contact () {
-    // Update screen when go to contact form
-    current_screen = 3
-    update_scroll_buttons ()
-}
-
-function go_projects () {
-    current_screen = 2
-    update_scroll_buttons ()
-}
-
-
-function decress_screen_counter () {
+    last_screen = current_screen
+    
     // Update screen counter
     current_screen -= 1
     if (current_screen < 1) {
         current_screen = 1
+    } else {
+        await anim_fade_out ()
     }
 }
 
-function incress_screen_counter () {
+async function incress_screen_counter () {
+
+    last_screen = current_screen
+    
     // Update screen counter
     current_screen += 1 
     if (current_screen > max_screens) {
         current_screen = max_screens
+    } else {
+        await anim_fade_out ()
     }
 }
 
-function change_screen () {
+async function change_screen () {
     // Transparency buttons
     update_scroll_buttons ()
 
@@ -95,6 +87,11 @@ function change_screen () {
     } else if (current_screen == 3) {
         section_contact.classList.remove ("hide")
     }
+
+    if (last_screen != current_screen) {
+        await anim_fade_in ()
+    }
+
 }
   
 function scroll_up(event) {

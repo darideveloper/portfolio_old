@@ -90,6 +90,14 @@ a {
   user-select: none;
 }
 
+.btn {
+  box-shadow: 4px 4px 12px 4px rgba(0, 0, 0, 0.5);
+  transition-duration: 0.25s;
+}
+.btn:hover {
+  box-shadow: 0px 0px 16px 6px rgba(0, 0, 0, 0.8);
+}
+
 header {
   height: 80px;
   display: flex;
@@ -591,6 +599,10 @@ main .scroll p.transparent {
   width: 53.3333333333vh;
   min-width: 53.3333333333vh;
   height: 40vh;
+  cursor: pointer;
+}
+.projects .wrapper-images .images .wrapper-img.active:hover {
+  filter: grayscale(0%);
 }
 .projects .wrapper-images .images .wrapper-img.blur {
   filter: grayscale(100%) blur(6px);
@@ -671,7 +683,6 @@ main .scroll p.transparent {
   text-transform: uppercase;
   margin-top: 25px;
   padding: 15px 40px;
-  box-shadow: 4px 4px 12px 4px rgba(0, 0, 0, 0.5);
 }
 @media screen and (max-width: 1500px) {
   .projects .wrapper-info .info .details {

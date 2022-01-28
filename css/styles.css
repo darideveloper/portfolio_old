@@ -192,7 +192,6 @@ header nav ul a:nth-child(2) {
 }
 
 .contact {
-  margin-top: 200vh;
   text-align: center;
   justify-content: center;
 }
@@ -578,7 +577,6 @@ main .scroll p.transparent {
 }
 
 .projects {
-  margin-top: 100vh;
   position: relative;
   flex-direction: column;
 }

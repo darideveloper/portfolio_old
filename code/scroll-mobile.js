@@ -6,24 +6,19 @@ let availHeight = window.screen.availHeight
 console.log (availHeight)
 
 const body = document.querySelector ("body")
-const main = document.querySelector (".main-section")
-main.style.height = availHeight
-
-
 
 function vHandleGesture() {
   // Detect when user hide search bar
-  let current_height = window.outerHeight
   if (start_height == start_height) {
     if (!sliding) {
       if (touchendY < touchstartY) {
         incress_screen_counter ()
-        change_screen ()
       }
       if (touchendY > touchstartY) {
         decress_screen_counter ()
-        change_screen ()
       }
+      console.log ("change")
+      change_screen ()
     }
   }
 
@@ -34,6 +29,7 @@ body.addEventListener('touchstart', e => {
 })
 
 body.addEventListener('touchend', e => {
+  console.log ("here")
   touchendY = e.changedTouches[0].screenY
   vHandleGesture ()
 })

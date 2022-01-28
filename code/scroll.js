@@ -4,6 +4,9 @@ const scroll_button_down = document.querySelector ("main .scroll .down")
 const header_logo = document.querySelector ("header .logo")
 const header_projects = document.querySelector ("header .menu ul a:nth-child(1)")
 const header_contact = document.querySelector ("header .menu ul a:nth-child(2)")
+const section_main = document.querySelector ("main.main-section > .iam")
+const section_projects = document.querySelector (".main-section.projects")
+const section_contact = document.querySelector (".main-section.contact")
 let current_screen = 1
 let max_screens = 3
 
@@ -80,8 +83,21 @@ function change_screen () {
     // Transparency buttons
     update_scroll_buttons ()
 
-    // Made scroll
-    window.scroll(0, window.innerHeight * (current_screen - 1))
+    console.log (current_screen)
+
+    // Hide all screens
+    section_main.classList.add ("hide")
+    section_projects.classList.add ("hide")
+    section_contact.classList.add ("hide")
+
+    // Show active screen
+    if (current_screen == 1) {
+        section_main.classList.remove ("hide")
+    } else if (current_screen == 2) {
+        section_projects.classList.remove ("hide")
+    } else if (current_screen == 3) {
+        section_contact.classList.remove ("hide")
+    }
 }
   
 function scroll_up(event) {

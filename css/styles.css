@@ -118,6 +118,9 @@ header .wrapper-img:hover img {
 header nav ul {
   margin: 0;
   padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 header nav ul a {
   transition-duration: 0.5s;
@@ -159,19 +162,22 @@ header nav ul a:nth-child(2) {
   }
   header nav {
     width: 100%;
-    margin-top: 20px;
+    margin-top: -65px;
   }
   header nav ul {
     width: 100%;
-    justify-content: space-evenly;
+    justify-content: space-between;
   }
-  header nav ul li:nth-child(2) {
-    margin-left: 0;
+  header nav ul a {
+    padding: 20px 0 !important;
   }
 }
-@media screen and (max-width: 400px) {
-  header nav ul {
-    justify-content: space-between;
+@media screen and (max-width: 450px) {
+  header .wrapper-img {
+    display: none;
+  }
+  header nav {
+    margin-top: 0px;
   }
 }
 

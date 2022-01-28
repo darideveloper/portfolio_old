@@ -29,6 +29,9 @@ header
         ul
             margin: 0
             padding: 0
+            display: flex
+            align-items: center
+            justify-content: center
 
             a
 
@@ -70,16 +73,18 @@ header
 
         nav
             width: 100%
-            margin-top: 20px
+            margin-top: -65px
 
             ul
                 width: 100%
-                justify-content: space-evenly
-
-                li:nth-child(2)
-                        margin-left: 0
-
-    @media screen and (max-width: 400px)
-        nav
-            ul
                 justify-content: space-between
+
+                a
+                    padding: 20px 0 !important
+
+    @media screen and (max-width: 450px)
+        .wrapper-img
+            display: none
+
+        nav
+            margin-top: 0px

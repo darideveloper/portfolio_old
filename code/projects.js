@@ -19,9 +19,6 @@ const max_images = projects_data.length
 // screen type
 var vertical = false
 
-// Salide status control variable
-var sliding = false
-
 function update_listeners () {
     
     image_right = document.querySelector ("div.projects > div.wrapper-images > .images > .wrapper-img.right")
@@ -30,10 +27,10 @@ function update_listeners () {
     images_wrapper = document.querySelector ("div.projects > div.wrapper-images > .images")
     
     image_right.addEventListener ("click", function (e) {
-        slide (next=true, last_image=image_left, new_image=image_right)
+        slide_projects (next=true, last_image=image_left, new_image=image_right)
     })
     image_left.addEventListener ("click", function (e) {
-        slide (next=false, last_image=image_right, new_image=image_left)
+        slide_projects (next=false, last_image=image_right, new_image=image_left)
     })
 }
 
@@ -66,7 +63,7 @@ function sleep(sec) {
     return new Promise(resolve => setTimeout(resolve, sec * 1000));
 }
 
-async function slide (next, last_image, new_image) {
+async function slide_projects (next, last_image, new_image) {
 
     // Update status
     sliding = true

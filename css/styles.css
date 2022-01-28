@@ -237,7 +237,6 @@ header nav ul a:nth-child(2) {
 .contact .form form input[type=submit] {
   border: none;
   color: #d1d1d1;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7), -3px -3px 6px rgba(0, 0, 0, 0.3);
   width: auto;
   margin: 30px auto;
   margin-bottom: 0;

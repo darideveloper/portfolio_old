@@ -113,16 +113,17 @@ header {
   width: 100%;
   z-index: 1;
 }
-header .wrapper-img {
-  width: auto;
-  height: 100%;
+header .logo {
+  width: 80px;
+  height: 80px;
   cursor: pointer;
 }
-header .wrapper-img img {
-  transition-duration: 0.5s;
+header .logo img {
+  width: 100%;
+  height: 100%;
 }
-header .wrapper-img:hover img {
-  width: auto;
+header .logo:hover img {
+  width: 90%;
   height: 90%;
 }
 header nav ul {
@@ -844,6 +845,26 @@ main .scroll p.transparent {
   .projects .wrapper-info .info .cta {
     margin-top: 20px;
   }
+}
+
+.wrapper-animation-move {
+  position: relative;
+}
+.wrapper-animation-move .animation {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.animation {
+  transition-duration: 0.25s;
+  opacity: 100%;
+}
+
+.fade-in .animation {
+  opacity: 0 !important;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,5 +1,5 @@
 // Initial animation values
-.wrapper-animation-move
+.animation-move
     position: relative
 
     .animation
@@ -14,6 +14,16 @@
     opacity: 100%
 
 // Apply in animations
-.fade-in
+.fade
     .animation
         opacity: 0 !important
+
+// Main section animations
+main
+    .fade
+
+        &.wrapper-up p
+            left: -40px !important
+
+        &.wrapper-down p
+            right: -40px !important

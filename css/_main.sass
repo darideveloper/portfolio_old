@@ -1,14 +1,44 @@
 main
     .iam
+        padding: 4vw
+
+        &:hover
+            .name::before 
+                transform: scaleX(1)
+                transform-origin: bottom left
+
+            p
+                margin-right: 10px
+                margin-left: 10px
 
         .name
             font-size: min(10vw, 150px)
             margin: 0
-            padding: 0
             text-shadow: 0px 0px 4vw black
             font-weight: bold
             color: $color_b
-        
+            letter-spacing: normal
+            position: relative
+            padding: 1vw
+            cursor: default
+
+            &::before
+                transform: scaleX(0)
+                transform-origin: bottom right
+
+            &::before 
+                content: " "
+                display: block
+                position: absolute
+                top: 0
+                right: 0
+                bottom: 0
+                left: 0
+                inset: 0 0 0 0
+                background: $color_c
+                z-index: -1
+                transition: transform .25s ease
+
         .uppercase
             text-transform: uppercase
 
@@ -19,6 +49,9 @@ main
         .down
             text-align: right
             margin-right: 100px
+
+        p
+            transition-duration: 0.25s
 
     .socials
         position: fixed

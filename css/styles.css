@@ -397,13 +397,44 @@ header nav ul a:nth-child(2) {
   }
 }
 
+main .iam {
+  padding: 4vw;
+}
+main .iam:hover .name::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+main .iam:hover p {
+  margin-right: 10px;
+  margin-left: 10px;
+}
 main .iam .name {
   font-size: min(10vw, 150px);
   margin: 0;
-  padding: 0;
   text-shadow: 0px 0px 4vw black;
   font-weight: bold;
   color: #d1d1d1;
+  letter-spacing: normal;
+  position: relative;
+  padding: 1vw;
+  cursor: default;
+}
+main .iam .name::before {
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+main .iam .name::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  inset: 0 0 0 0;
+  background: #1c1c1f;
+  z-index: -1;
+  transition: transform 0.25s ease;
 }
 main .iam .uppercase {
   text-transform: uppercase;
@@ -415,6 +446,9 @@ main .iam .up {
 main .iam .down {
   text-align: right;
   margin-right: 100px;
+}
+main .iam p {
+  transition-duration: 0.25s;
 }
 main .socials {
   position: fixed;

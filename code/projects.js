@@ -161,7 +161,7 @@ async function slide_projects (next, last_image, new_image) {
 
     // Remove extra classed in ther added image
     selector =  "div.projects > div.wrapper-images > .images > .wrapper-img." + added_image_position
-    added_image_elem = document.querySelector (selector)
+    const added_image_elem = document.querySelector (selector)
     if (vertical) {
         await sleep(0.02)
     } else {

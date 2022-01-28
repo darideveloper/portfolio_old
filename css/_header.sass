@@ -33,28 +33,24 @@ header
             align-items: center
             justify-content: center
 
-            a
+            li
 
                 transition-duration: 0.5s
                 opacity: 0.4
                 display: block
                 padding: 40px
+                list-style: none
+                text-transform: uppercase
+                color: $color_d
+                font-size: 18px
+                transition-duration: 0.5s
+                cursor: pointer
+                    
 
                 &:hover
                     text-shadow: 0px 0px 20px $color_e
                     opacity: 1
-
-                    li
-                        color: $color_d
-
-
-                li
-                    list-style: none
-                    text-transform: uppercase
                     color: $color_d
-                    font-size: 18px
-                    transition-duration: 0.5s
-                    
 
                 &:nth-child(2)
                     padding-right: 0
@@ -79,7 +75,7 @@ header
                 width: 100%
                 justify-content: space-between
 
-                a
+                li
                     padding: 20px 0 !important
 
     @media screen and (max-width: 450px)

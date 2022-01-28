@@ -132,27 +132,24 @@ header nav ul {
   align-items: center;
   justify-content: center;
 }
-header nav ul a {
+header nav ul li {
   transition-duration: 0.5s;
   opacity: 0.4;
   display: block;
   padding: 40px;
-}
-header nav ul a:hover {
-  text-shadow: 0px 0px 20px #739cc4;
-  opacity: 1;
-}
-header nav ul a:hover li {
-  color: #fff;
-}
-header nav ul a li {
   list-style: none;
   text-transform: uppercase;
   color: #fff;
   font-size: 18px;
   transition-duration: 0.5s;
+  cursor: pointer;
 }
-header nav ul a:nth-child(2) {
+header nav ul li:hover {
+  text-shadow: 0px 0px 20px #739cc4;
+  opacity: 1;
+  color: #fff;
+}
+header nav ul li:nth-child(2) {
   padding-right: 0;
 }
 @media screen and (max-width: 1600px) {
@@ -178,7 +175,7 @@ header nav ul a:nth-child(2) {
     width: 100%;
     justify-content: space-between;
   }
-  header nav ul a {
+  header nav ul li {
     padding: 20px 0 !important;
   }
 }

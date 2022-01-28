@@ -35,7 +35,6 @@ scroll_button_down.addEventListener ("click", function (e) {
     if ( !scroll_button_down.classList.contains ("transparent")) {
         incress_screen_counter ()
         change_screen ()
-        console.log (!scroll_button_down.classList.contains ("transparent"))
     }
 })
 
@@ -82,8 +81,6 @@ function incress_screen_counter () {
 function change_screen () {
     // Transparency buttons
     update_scroll_buttons ()
-
-    console.log (current_screen)
 
     // Hide all screens
     section_main.classList.add ("hide")

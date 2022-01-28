@@ -33,7 +33,15 @@
                 /* Handle on hover */
                 &::-webkit-scrollbar-thumb:hover 
                     background: rgba($color_a, 0.8)
-        
+
+@mixin hide_h2 ()
+    .form
+        margin-top: 62px
+
+        form
+            h2
+                display: none
+
     
 .contact
     // margin-top: 200vh
@@ -94,8 +102,7 @@
             @include scroll_form
             
         @media screen and (max-height: 600px)
-            @include hide_info
-            
+            @include hide_h2           
 
     @media screen and (max-width: 1299px)
         .info 
@@ -113,10 +120,7 @@
                         width: calc(100% - 19px)
                         max-width: calc(100% - 20px)
                         margin: 10px
-            
-        // @media screen and (max-height: 550px)
-        //     @include scroll_form
-    
+                
     @media screen and (max-width: 1150px)
         .info
             margin-right: 40px
@@ -124,6 +128,9 @@
         @media screen and (max-height: 550px)
             .form
                 padding: 20px
+        
+        @media screen and (max-height: 350px)
+            @include hide_h2
 
     @media screen and (max-width: 1050px)
         .info
@@ -131,6 +138,9 @@
 
             p
                 display: none
+        
+        @media screen and (max-height: 490px)
+            @include hide_h2
 
     @media screen and (max-width: 980px)
         .info
@@ -143,6 +153,7 @@
             form
                 input
                     width: 100%
+        
 
     @media screen and (max-width: 800px)
         .form
@@ -156,6 +167,7 @@
         @media screen and (max-height: 680px)
             @include scroll_form(120px)
 
+
     @media screen and (max-width: 500px)
         .form
             width: calc(90vw - 100px)
@@ -164,9 +176,20 @@
         @media screen and (max-height: 780px)
             @include scroll_form(120px)
 
+        @media screen and (max-height: 600px)
+            @include hide_h2
+
     @media screen and (max-width: 380px)
         .form
             width: calc(90vw - 30px)
             max-width: calc(90vw - 30px)
             padding: 15px
+            margin-top: 0
+
+            form
+                h2
+                    display: block
+    
+        @media screen and (max-height: 500px)
+            @include hide_h2
             

@@ -1,3 +1,9 @@
+@mixin hide_socials ()
+    @media screen and (max-height: 425px)
+        .socials
+            display: none !important
+
+
 main
     .iam
         padding: 4vw
@@ -150,13 +156,19 @@ main
         .scroll
             display: none
 
+        @include hide_socials ()
+
     @media screen and (max-width: 500px)
 
         .uppercase
             font-size: 12px
+
+        @include hide_socials ()
 
 
     @media screen and (max-width: 400px)
         
         .socials
             flex-direction: column
+
+        @include hide_socials ()

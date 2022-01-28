@@ -2,9 +2,6 @@ let touchstartY = 0
 let touchendY = 0
 let start_height = window.outerHeight
 
-let availHeight = window.screen.availHeight
-console.log (availHeight)
-
 const body = document.querySelector ("body")
 
 function vHandleGesture() {
@@ -17,7 +14,6 @@ function vHandleGesture() {
       if (touchendY > touchstartY) {
         decress_screen_counter ()
       }
-      console.log ("change")
       change_screen ()
     }
   }
@@ -29,7 +25,6 @@ body.addEventListener('touchstart', e => {
 })
 
 body.addEventListener('touchend', e => {
-  console.log ("here")
   touchendY = e.changedTouches[0].screenY
   vHandleGesture ()
 })

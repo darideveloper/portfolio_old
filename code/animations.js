@@ -70,7 +70,7 @@ elem_contact_email.style.transform = "translateX(-50px)"
 elem_contact_form.style.transform = "translateY(-50px)"
 
 // Animation fixed objects
-let animm_fixed_logo = anime({
+const animm_fixed_logo = anime({
     targets: [elem_fixed_logo],
     opacity: [0, 1],
     translateX: [-50, 0],
@@ -78,7 +78,7 @@ let animm_fixed_logo = anime({
     duration: wait_time * 1000 * 2
 });
 
-let anim_fixed_menu = anime({
+const anim_fixed_menu = anime({
     targets: elem_fixed_menu,
     opacity: [0, 1],
     translateX: [50, 0],
@@ -86,7 +86,7 @@ let anim_fixed_menu = anime({
     duration: wait_time * 1000 * 2
 });
 
-let anim_fixed_socials = anime({
+const anim_fixed_socials = anime({
     targets: elem_fixed_socials,
     opacity: [0, 1],
     translateX: [-50, 0],
@@ -94,7 +94,7 @@ let anim_fixed_socials = anime({
     duration: wait_time * 1000 * 2
 });
 
-let anim_fixed_scroll = anime({
+const anim_fixed_scroll = anime({
     targets: elem_fixed_scroll,
     opacity: [0, 1],
     translateX: [50, 0],
@@ -103,7 +103,7 @@ let anim_fixed_scroll = anime({
 });
 
 // Animations main objects
-let anim_main_title = anime({
+const anim_main_title = anime({
     targets: elem_main_title,
     opacity: [0, 1],
     translateY: [50, 0],
@@ -111,7 +111,7 @@ let anim_main_title = anime({
     duration: wait_time * 1000 * 2
 });
 
-let anim_main_up = anime({
+const anim_main_up = anime({
     targets: elem_main_up,
     opacity: [0, 1],
     translateX: [-50, 0],
@@ -119,7 +119,7 @@ let anim_main_up = anime({
     duration: wait_time * 1000 * 2
 });
 
-let anim_main_down = anime({
+const anim_main_down = anime({
     targets: elem_main_down,
     opacity: [0, 1],
     translateX: [50, 0],
@@ -128,7 +128,7 @@ let anim_main_down = anime({
 });
 
 // Aimations projects objects
-let anim_projects_imgs = anime({
+const anim_projects_imgs = anime({
     targets: elem_projects_imgs,
     opacity: [0, 1],
     translateX: [-50, 0],
@@ -136,7 +136,7 @@ let anim_projects_imgs = anime({
     duration: wait_time * 1000 * 2
 });
 
-let anim_projects_title = anime({
+const anim_projects_title = anime({
     targets: elem_projects_title,
     opacity: [0, 1],
     translateX: [50, 0],
@@ -144,7 +144,7 @@ let anim_projects_title = anime({
     duration: wait_time * 1000 * 2
 });
 
-let anim_projects_text = anime({
+const anim_projects_text = anime({
     targets: elem_projects_text,
     opacity: [0, 1],
     translateX: [-50, 0],
@@ -152,7 +152,7 @@ let anim_projects_text = anime({
     duration: wait_time * 1000 * 2
 });
 
-let anim_projects_cta = anime({
+const anim_projects_cta = anime({
     targets: elem_projects_cta,
     opacity: [0, 1],
     translateX: [-50, 0],
@@ -161,7 +161,7 @@ let anim_projects_cta = anime({
 });
 
 // Animations contacts objects
-let anim_contact_info = anime({
+const anim_contact_info = anime({
     targets: elem_contact_info,
     opacity: [0, 1],
     translateY: [50, 0],
@@ -169,7 +169,7 @@ let anim_contact_info = anime({
     duration: wait_time * 1000 * 2
 });
 
-let anim_contact_about = anime({
+const anim_contact_about = anime({
     targets: elem_contact_about,
     opacity: [0, 1],
     translateX: [-50, 0],
@@ -177,7 +177,7 @@ let anim_contact_about = anime({
     duration: wait_time * 1000 * 2
 });
 
-let anim_contact_phone = anime({
+const anim_contact_phone = anime({
     targets: elem_contact_phone,
     opacity: [0, 1],
     translateX: [-50, 0],
@@ -185,7 +185,7 @@ let anim_contact_phone = anime({
     duration: wait_time * 1000 * 2
 });
 
-let anim_contact_email = anime({
+const anim_contact_email = anime({
     targets: elem_contact_email,
     opacity: [0, 1],
     translateX: [-50, 0],
@@ -193,7 +193,7 @@ let anim_contact_email = anime({
     duration: wait_time * 1000 * 2
 });
 
-let anim_contact_form = anime({
+const anim_contact_form = anime({
     targets: elem_contact_form,
     opacity: [0, 1],
     translateY: [-50, 0],
@@ -319,6 +319,8 @@ async function fade_in_projects () {
 
     await sleep(wait_time)
     anim_projects_cta.play()
+
+    await sleep(wait_time*3)
 }
 
 async function fade_out_projects () {
@@ -346,7 +348,7 @@ async function fade_out_projects () {
 
     
     // Reset animations state
-    await sleep(wait_time*4)
+    await sleep(wait_time*3)
     anim_projects_imgs.reverse()
     anim_projects_title.reverse()
     anim_projects_text.reverse()
@@ -377,6 +379,8 @@ async function fade_in_contact () {
         anim_contact_form.play()
     }
 
+    await sleep(wait_time*3)
+
 }
 
 async function fade_out_contact () {
@@ -396,14 +400,12 @@ async function fade_out_contact () {
     anim_contact_form.play()
 
     // Reset animations state
-    await sleep(wait_time*4)
+    await sleep(wait_time*3)
     anim_contact_info.reverse()
     anim_contact_form.reverse()
     anim_contact_about.reverse()
     anim_contact_phone.reverse()
     anim_contact_email.reverse()
-
-
 }
 
 anim_on_load ()

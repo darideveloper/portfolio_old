@@ -1,13 +1,34 @@
 // Fixed elements
-const anim_logo = document.querySelector ("header .logo")
-const anim_socials = document.querySelector ("main .socials")
-const anim_menu = document.querySelector ("header .menu")
-const anim_scroll = document.querySelector ("main .scroll")
+const elem_logo = document.querySelector("header .logo")
+const elem_socials = document.querySelector("main .socials")
+const elem_menu = document.querySelector("header .menu")
+const elem_scroll = document.querySelector("main .scroll")
 
 // Main elements
-const anim_main_up = document.querySelector ("main .iam .wrapper-up")
-const anim_main_title = document.querySelector ("main .iam .wrapper-title")
-const anim_main_down = document.querySelector ("main .iam .wrapper-down")
+const elem_main_up = document.querySelector("main .iam .up")
+const elem_main_title = document.querySelector("main .iam .title")
+const elem_main_down = document.querySelector("main .iam .down")
+
+// Animations initial values for fixed elements
+elem_logo.style.opacity = "0"
+elem_socials.style.opacity = "0"
+elem_menu.style.opacity = "0"
+elem_scroll.style.opacity = "0"
+
+elem_logo.style.transform = "translateX(-50px)"
+elem_socials.style.transform = "translateX(-50px)"
+elem_menu.style.transform = "translateX(50px)"
+elem_scroll.style.transform = "translateX(50px)"
+
+// Animations initial values for iam
+elem_main_up.style.opacity = "0"
+elem_main_down.style.opacity = "0"
+elem_main_title.style.opacity = "0"
+
+elem_main_up.style.transform = "translateX(-50px)"
+elem_main_down.style.transform = "translateX(50px)"
+elem_main_title.style.transform = "translateY(50px)"
+
 
 function sleep(s) {
     return new Promise(resolve => setTimeout(resolve, s*1000));
@@ -21,25 +42,40 @@ function get_display (elem) {
 async function anim_fixed_elems () {
     await sleep(0.5)
 
-    if (get_display (anim_logo) != "none") {
+    if (get_display (elem_logo) != "none") {
         await sleep(.25/2)
-        anim_logo.classList.remove ("fade")
+        anime({
+            targets: [elem_logo],
+            opacity: [0, 1],
+            translateX: [-50, 0]
+        });
     }
 
-    if (get_display (anim_menu) != "none") {
+    if (get_display (elem_menu) != "none") {
         await sleep(.25/2)
-        anim_menu.classList.remove ("fade")
+        anime({
+            targets: elem_menu,
+            opacity: 1,
+            translateX: 0
+        });
     }
 
-    if (get_display (anim_socials) != "none") {
+    if (get_display (elem_socials) != "none") {
         await sleep(.25/2)
-        anim_socials.classList.remove ("fade")
+        anime({
+            targets: elem_socials,
+            opacity: 1,
+            translateX: 0
+        });
     }
 
-
-    if (get_display (anim_scroll) != "none") {
+    if (get_display (elem_scroll) != "none") {
         await sleep(.25/2)
-        anim_scroll.classList.remove ("fade")
+        anime({
+            targets: elem_scroll,
+            opacity: 1,
+            translateX: 0
+        });
     }
     
     fade_in_main ()
@@ -55,7 +91,7 @@ async function anim_fade_out () {
         console.log ("out contact")
     }
 
-    await sleep (0.5)
+    await sleep (.25)
 }
 
 async function anim_fade_in () {
@@ -67,26 +103,46 @@ async function anim_fade_in () {
     } else if (current_screen == 3) {
         console.log ("out contact")
     }
+
+    restart_displays ()
 }
 
 async function fade_in_main () {
     await sleep(.5)
-    anim_main_title.classList.remove ("fade")
+    anime({
+        targets: elem_main_title,
+        opacity: 1,
+        translateY: 0
+    });
 
     await sleep(.5)
-    anim_main_up.classList.remove ("fade")
-    anim_main_down.classList.remove ("fade")
+    anime({
+        targets: [elem_main_up, elem_main_down],
+        opacity: 1,
+        translateX: 0,
+    });
 }
 
 async function fade_out_main () {
     await sleep(.5)
-    anim_main_up.classList.add ("fade")
-    anim_main_down.classList.add ("fade")
+    anime({
+        targets: elem_main_up,
+        opacity: 0,
+        translateX: -50,
+    });
+
+    anime({
+        targets: elem_main_down,
+        opacity: 0,
+        translateX: 50,
+    });
     
     await sleep(.5)
-    anim_main_title.classList.add ("fade")
-
+    anime({
+        targets: elem_main_title,
+        opacity: 0,
+        translateY: 50,
+    });
 }
-
 
 anim_fixed_elems ()

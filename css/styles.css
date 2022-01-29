@@ -441,15 +441,6 @@ header nav ul li:nth-child(2) {
 
 main .iam {
   padding: 4vw;
-  padding-top: 0;
-}
-main .iam:hover .name::before {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-main .iam:hover p {
-  margin-right: 10px;
-  margin-left: 10px;
 }
 main .iam .name {
   font-size: min(10vw, 150px);
@@ -482,9 +473,6 @@ main .iam .name::before {
 }
 main .iam .uppercase {
   text-transform: uppercase;
-}
-main .iam .wrapper-up {
-  margin-bottom: 50px;
 }
 main .iam .up {
   text-align: left;
@@ -852,31 +840,9 @@ main .scroll p.transparent {
   }
 }
 
-.animation-move {
-  position: relative;
-}
-.animation-move .animation {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-}
-
-.animation {
-  transition-duration: 0.25s;
-  opacity: 100%;
-}
-
-.fade .animation {
-  opacity: 0 !important;
-}
-
-main .fade.wrapper-up p {
-  left: -40px !important;
-}
-main .fade.wrapper-down p {
-  right: -40px !important;
+.animation.logo {
+  opacity: 0;
+  translateX: -50;
 }
 
 /*# sourceMappingURL=styles.css.map */

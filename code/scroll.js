@@ -1,7 +1,6 @@
 const scrollableElement = document.body;
 const scroll_button_up = document.querySelector ("main .scroll .up")
 const scroll_button_down = document.querySelector ("main .scroll .down")
-const header_logo = document.querySelector ("header .logo")
 const header_projects = document.querySelector ("header .menu ul i:nth-child(1)")
 const header_contact = document.querySelector ("header .menu ul i:nth-child(2)")
 const section_main = document.querySelector ("main.main-section > .iam")
@@ -49,7 +48,7 @@ scroll_button_down.addEventListener ("click", async function (e) {
     }
 })
 
-header_logo.addEventListener ("click", function (e) {
+elem_fixed_menu.addEventListener ("click", function (e) {
     go_contact ()
 })
 

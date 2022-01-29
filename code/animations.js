@@ -22,9 +22,6 @@ const elem_contact_phone = document.querySelector(".contact .info .phone")
 const elem_contact_email = document.querySelector(".contact .info .email")
 const elem_contact_form = document.querySelector(".contact .form")
 
-var animation_running = true
-console.log (animation_running)
-
 // Animations time
 wait_time = 0.5
 

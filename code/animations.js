@@ -1,8 +1,8 @@
 // Fixed elements
-const elem_logo = document.querySelector("header .logo")
-const elem_socials = document.querySelector("main .socials")
-const elem_menu = document.querySelector("header .menu")
-const elem_scroll = document.querySelector("main .scroll")
+const elem_fixed_logo = document.querySelector("header .logo")
+const elem_fixed_socials = document.querySelector("main .socials")
+const elem_fixed_menu = document.querySelector("header .menu")
+const elem_fixed_scroll = document.querySelector("main .scroll")
 
 // Main elements
 const elem_main_up = document.querySelector("main .iam .up")
@@ -15,19 +15,26 @@ const elem_projects_title = document.querySelector(".projects .info .wrapper-tit
 const elem_projects_text = document.querySelector(".projects .info .details")
 const elem_projects_cta = document.querySelector(".projects .info .cta")
 
+// Contact elements
+const elem_contact_info = document.querySelector(".contact .info")
+const elem_contact_about = document.querySelector(".contact .info .about")
+const elem_contact_phone = document.querySelector(".contact .info .phone")
+const elem_contact_email = document.querySelector(".contact .info .email")
+const elem_contact_form = document.querySelector(".contact .form")
+
 // Animations time
 wait_time = 0.5
 
 // Animations initial values for fixed elements
-elem_logo.style.opacity = "0"
-elem_socials.style.opacity = "0"
-elem_menu.style.opacity = "0"
-elem_scroll.style.opacity = "0"
+elem_fixed_logo.style.opacity = "0"
+elem_fixed_socials.style.opacity = "0"
+elem_fixed_menu.style.opacity = "0"
+elem_fixed_scroll.style.opacity = "0"
 
-elem_logo.style.transform = "translateX(-50px)"
-elem_socials.style.transform = "translateX(-50px)"
-elem_menu.style.transform = "translateX(50px)"
-elem_scroll.style.transform = "translateX(50px)"
+elem_fixed_logo.style.transform = "translateX(-50px)"
+elem_fixed_socials.style.transform = "translateX(-50px)"
+elem_fixed_menu.style.transform = "translateX(50px)"
+elem_fixed_scroll.style.transform = "translateX(50px)"
 
 // Animations initial values for iam
 elem_main_up.style.opacity = "0"
@@ -49,125 +56,84 @@ elem_projects_title.style.transform = "translateX(50px)"
 elem_projects_text.style.transform = "translateX(-50px)"
 elem_projects_cta.style.transform = "translateX(50px)"
 
+// Animations initial values for contact
+elem_contact_info.style.opacity = "0"
+elem_contact_about.style.opacity = "0"
+elem_contact_phone.style.opacity = "0"
+elem_contact_email.style.opacity = "0"
+elem_contact_form.style.opacity = "0"
 
-function sleep(s) {
-    return new Promise(resolve => setTimeout(resolve, s*1000));
-}
+elem_contact_info.style.transform = "translateXY(50px)"
+elem_contact_about.style.transform = "translateX(-50px)"
+elem_contact_phone.style.transform = "translateX(-50px)"
+elem_contact_email.style.transform = "translateX(-50px)"
+elem_contact_form.style.transform = "translateY(-50px)"
 
-function get_display (elem) {
-    display = document.defaultView.getComputedStyle(elem)["display"]
-    return display
-}
+// Animation fixed objects
+let animm_fixed_logo = anime({
+    targets: [elem_fixed_logo],
+    opacity: [0, 1],
+    translateX: [-50, 0],
+    autoplay: false,
+    duration: wait_time * 1000 * 2
+});
 
-async function anim_fixed_elems () {
-    await sleep(wait_time)
+let anim_fixed_menu = anime({
+    targets: elem_fixed_menu,
+    opacity: [0, 1],
+    translateX: [50, 0],
+    autoplay: false,
+    duration: wait_time * 1000 * 2
+});
 
-    if (get_display (elem_logo) != "none") {
-        await sleep(wait_time/4)
-        anime({
-            targets: [elem_logo],
-            opacity: [0, 1],
-            translateX: [-50, 0]
-        });
-    }
+let anim_fixed_socials = anime({
+    targets: elem_fixed_socials,
+    opacity: [0, 1],
+    translateX: [-50, 0],
+    autoplay: false,
+    duration: wait_time * 1000 * 2
+});
 
-    if (get_display (elem_menu) != "none") {
-        await sleep(wait_time/4)
-        anime({
-            targets: elem_menu,
-            opacity: 1,
-            translateX: 0
-        });
-    }
+let anim_fixed_scroll = anime({
+    targets: elem_fixed_scroll,
+    opacity: [0, 1],
+    translateX: [50, 0],
+    autoplay: false,
+    duration: wait_time * 1000 * 2
+});
 
-    if (get_display (elem_socials) != "none") {
-        await sleep(wait_time/4)
-        anime({
-            targets: elem_socials,
-            opacity: 1,
-            translateX: 0
-        });
-    }
+// Animations main objects
+let anim_main_title = anime({
+    targets: elem_main_title,
+    opacity: [0, 1],
+    translateY: [50, 0],
+    autoplay: false,
+    duration: wait_time * 1000 * 2
+});
 
-    if (get_display (elem_scroll) != "none") {
-        await sleep(wait_time/4)
-        anime({
-            targets: elem_scroll,
-            opacity: 1,
-            translateX: 0
-        });
-    }
-    
-    fade_in_main ()
-}
+let anim_main_up = anime({
+    targets: elem_main_up,
+    opacity: [0, 1],
+    translateX: [-50, 0],
+    autoplay: false,
+    duration: wait_time * 1000 * 2
+});
 
-async function anim_fade_out () {
+let anim_main_down = anime({
+    targets: elem_main_down,
+    opacity: [0, 1],
+    translateX: [50, 0],
+    autoplay: false,
+    duration: wait_time * 1000 * 2
+});
 
-    if (last_screen == 1) {
-        await fade_out_main ()
-    } else if (last_screen == 2) {
-        await fade_out_projects ()
-    } else if (last_screen == 3) {
-        console.log ("out contact")
-    }
-
-    await sleep (.25)
-}
-
-async function anim_fade_in () {
-    if (current_screen == 1) {
-        await fade_in_main ()
-    } else if (current_screen == 2) {
-        await fade_in_projects ()
-    } else if (current_screen == 3) {
-        console.log ("out contact")
-    }
-}
-
-async function fade_in_main () {
-    await sleep(wait_time)
-    anime({
-        targets: elem_main_title,
-        opacity: 1,
-        translateY: 0
-    });
-
-    await sleep(wait_time)
-    anime({
-        targets: [elem_main_up, elem_main_down],
-        opacity: 1,
-        translateX: 0,
-    });
-}
-
-async function fade_out_main () {
-    await sleep(wait_time)
-    anime({
-        targets: elem_main_up,
-        opacity: 0,
-        translateX: -50,
-    });
-
-    anime({
-        targets: elem_main_down,
-        opacity: 0,
-        translateX: 50,
-    });
-    
-    await sleep(wait_time)
-    anime({
-        targets: elem_main_title,
-        opacity: 0,
-        translateY: 50,
-    });
-}
-
+// Aimations projects objects
 let anim_projects_imgs = anime({
     targets: elem_projects_imgs,
     opacity: [0, 1],
     translateX: [-50, 0],
     autoplay: false,
-    duration: 1000
+    duration: wait_time * 1000 * 2
 });
 
 let anim_projects_title = anime({
@@ -175,7 +141,7 @@ let anim_projects_title = anime({
     opacity: [0, 1],
     translateX: [50, 0],
     autoplay: false,
-    duration: 1000
+    duration: wait_time * 1000 * 2
 });
 
 let anim_projects_text = anime({
@@ -183,7 +149,7 @@ let anim_projects_text = anime({
     opacity: [0, 1],
     translateX: [-50, 0],
     autoplay: false,
-    duration: 1000
+    duration: wait_time * 1000 * 2
 });
 
 let anim_projects_cta = anime({
@@ -191,12 +157,156 @@ let anim_projects_cta = anime({
     opacity: [0, 1],
     translateX: [-50, 0],
     autoplay: false,
-    duration: 1000
+    duration: wait_time * 1000 * 2
 });
 
-async function fade_in_projects () {
+// Animations contacts objects
+let anim_contact_info = anime({
+    targets: elem_contact_info,
+    opacity: [0, 1],
+    translateY: [50, 0],
+    autoplay: false,
+    duration: wait_time * 1000 * 2
+});
+
+let anim_contact_about = anime({
+    targets: elem_contact_about,
+    opacity: [0, 1],
+    translateX: [-50, 0],
+    autoplay: false,
+    duration: wait_time * 1000 * 2
+});
+
+let anim_contact_phone = anime({
+    targets: elem_contact_phone,
+    opacity: [0, 1],
+    translateX: [-50, 0],
+    autoplay: false,
+    duration: wait_time * 1000 * 2
+});
+
+let anim_contact_email = anime({
+    targets: elem_contact_email,
+    opacity: [0, 1],
+    translateX: [-50, 0],
+    autoplay: false,
+    duration: wait_time * 1000 * 2
+});
+
+let anim_contact_form = anime({
+    targets: elem_contact_form,
+    opacity: [0, 1],
+    translateY: [-50, 0],
+    autoplay: false,
+    duration: wait_time * 1000 * 2
+});
+
+function sleep(s) {
+    // Wait time
+    return new Promise(resolve => setTimeout(resolve, s*1000));
+}
+
+function get_display (elem) {
+    // Get display status of the current element
+    display = document.defaultView.getComputedStyle(elem)["display"]
+    return display
+}
+
+async function anim_on_load () {
+    // Animate fixed elements when page loads
 
     await sleep(wait_time)
+
+    if (get_display (elem_fixed_logo) != "none") {
+        await sleep(wait_time/4)
+        animm_fixed_logo.play ()
+    }
+
+    if (get_display (elem_fixed_menu) != "none") {
+        await sleep(wait_time/4)
+        anim_fixed_menu.play ()
+    }
+
+    if (get_display (elem_fixed_socials) != "none") {
+        await sleep(wait_time/4)
+        anim_fixed_socials.play ()
+    }
+
+    if (get_display (elem_fixed_scroll) != "none") {
+        await sleep(wait_time/4)
+        anim_fixed_scroll.play ()
+    }
+    
+    await sleep(wait_time)
+    fade_in_main ()
+}
+
+async function anim_fade_out () {
+    // Fade animations for hide elements when page change
+
+    if (last_screen == 1) {
+        await fade_out_main ()
+    } else if (last_screen == 2) {
+        await fade_out_projects ()
+    } else if (last_screen == 3) {
+        await fade_out_contact ()
+    }
+}
+
+async function anim_fade_in () {
+    // Fade animations for show elements when page change
+
+    if (current_screen == 1) {
+        await fade_in_main ()
+    } else if (current_screen == 2) {
+        await fade_in_projects ()
+    } else if (current_screen == 3) {
+        await fade_in_contact ()
+    }
+}
+
+async function fade_in_main () {
+    // Main section animation order for fade in
+
+    anim_main_title.play ()
+
+    await sleep(wait_time)
+    anim_main_up.play ()
+    anim_main_down.play ()
+
+    // Wait to animation end
+    await sleep(wait_time*3)
+
+}
+
+async function fade_out_main () {
+    // Main section animation order for fade out
+
+    console.log ("out main")
+
+    // Invert animations
+    anim_main_title.reverse()
+    anim_main_up.reverse()
+    anim_main_down.reverse()
+    
+    await sleep(wait_time/10)
+    anim_main_up.play ()
+    anim_main_down.play ()
+    
+    await sleep(wait_time)
+    anim_main_title.play ()
+
+    // Reverse animations state
+    await sleep(wait_time*3)
+    anim_main_title.reverse ()
+    anim_main_up.reverse ()
+    anim_main_down.reverse ()
+
+}
+
+async function fade_in_projects () {
+    // Projects section animation order for fade in
+
     anim_projects_imgs.play()
 
     await sleep(wait_time)
@@ -209,16 +319,10 @@ async function fade_in_projects () {
 
     await sleep(wait_time)
     anim_projects_cta.play()
-
-    // Restart tyle attribute
-    elem_projects_imgs.setAttribute ("style", "")
-    elem_projects_title.setAttribute ("style", "")
-    elem_projects_text.setAttribute ("style", "")
-    elem_projects_cta.setAttribute ("style", "")
-
 }
 
 async function fade_out_projects () {
+    // Projects section animation order for fade out
     
     // Invert animations
     anim_projects_imgs.reverse()
@@ -226,7 +330,7 @@ async function fade_out_projects () {
     anim_projects_text.reverse()
     anim_projects_cta.reverse()
 
-    await sleep(wait_time)
+    await sleep(wait_time/10)
     anim_projects_imgs.play()
 
     await sleep(wait_time)
@@ -241,7 +345,7 @@ async function fade_out_projects () {
     anim_projects_cta.play()
 
     
-    // Rset animations state
+    // Reset animations state
     await sleep(wait_time*4)
     anim_projects_imgs.reverse()
     anim_projects_title.reverse()
@@ -249,4 +353,57 @@ async function fade_out_projects () {
     anim_projects_cta.reverse()
 }
 
-anim_fixed_elems ()
+
+async function fade_in_contact () {
+    // Contact section animation order for fade in
+
+    if (get_display (elem_contact_info) != "none") { 
+        
+        anim_contact_info.play()
+        anim_contact_form.play()
+
+        if (get_display (elem_contact_about) != "none") { 
+            await sleep(wait_time)
+            anim_contact_about.play()
+        }
+    
+        await sleep(wait_time)
+        anim_contact_phone.play()
+    
+        await sleep(wait_time)
+        anim_contact_email.play()
+
+    } else {
+        anim_contact_form.play()
+    }
+
+}
+
+async function fade_out_contact () {
+    // Contact section animation order for fade out
+
+    // Invert animations
+    anim_contact_info.reverse()
+    anim_contact_form.reverse()
+    anim_contact_about.reverse()
+    anim_contact_phone.reverse()
+    anim_contact_email.reverse()
+
+    await sleep(wait_time/10)
+    if (get_display (elem_contact_info) != "none") { 
+        anim_contact_info.play()
+    }
+    anim_contact_form.play()
+
+    // Reset animations state
+    await sleep(wait_time*4)
+    anim_contact_info.reverse()
+    anim_contact_form.reverse()
+    anim_contact_about.reverse()
+    anim_contact_phone.reverse()
+    anim_contact_email.reverse()
+
+
+}
+
+anim_on_load ()

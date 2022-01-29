@@ -22,6 +22,9 @@ const elem_contact_phone = document.querySelector(".contact .info .phone")
 const elem_contact_email = document.querySelector(".contact .info .email")
 const elem_contact_form = document.querySelector(".contact .form")
 
+var animation_running = true
+console.log (animation_running)
+
 // Animations time
 wait_time = 0.5
 
@@ -237,8 +240,12 @@ async function anim_on_load () {
         anim_fixed_scroll.play ()
     }
     
+    // Show home fade in animations
     await sleep(wait_time)
-    fade_in_main ()
+    await fade_in_main ()
+
+    // Update animation global state
+    animation_running = false
 }
 
 async function anim_fade_out () {
@@ -263,6 +270,7 @@ async function anim_fade_in () {
     } else if (current_screen == 3) {
         await fade_in_contact ()
     }
+
 }
 
 async function fade_in_main () {
@@ -398,6 +406,10 @@ async function fade_out_contact () {
         anim_contact_info.play()
     }
     anim_contact_form.play()
+
+    anim_contact_about.play()
+    anim_contact_phone.play()
+    anim_contact_email.play()
 
     // Reset animations state
     await sleep(wait_time*3)

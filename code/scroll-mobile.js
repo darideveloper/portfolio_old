@@ -6,18 +6,21 @@ const body = document.querySelector ("body")
 
 async function vHandleGesture() {
   // Detect when user hide search bar
-  if (start_height == start_height) {
-    if (!sliding) {
-      if (touchendY < touchstartY) {
-        await incress_screen_counter ()
+
+  if (! animation_running) {
+    animation_running = true
+    if (start_height == start_height) {
+      if (!sliding) {
+        if (touchendY < touchstartY) {
+          await incress_screen_counter ()
+        }
+        if (touchendY > touchstartY) {
+          await decress_screen_counter ()
+        }
+        change_screen ()
       }
-      if (touchendY > touchstartY) {
-        await decress_screen_counter ()
-      }
-      change_screen ()
     }
   }
-
 }
 
 body.addEventListener('touchstart', e => {

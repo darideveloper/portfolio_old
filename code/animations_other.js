@@ -88,12 +88,17 @@ async function anim_on_load () {
     anim_loading.play ()
     anim_logo.play ()
     anim_socials.play ()
+
     await sleep (wait_time)
     anim_title.play ()
+
     await sleep (wait_time)
     anim_text.play ()
+
     await sleep (wait_time)
     anim_link.play ()
+
+    elem_loading.classList.add ("hide")
 }
 
 anim_on_load()

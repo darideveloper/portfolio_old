@@ -22,7 +22,7 @@ const elem_contact_email = document.querySelector(".contact .info .email")
 const elem_contact_form = document.querySelector(".contact .form")
 
 // Animations time
-wait_time = 0.5
+const wait_time = 0.5
 
 // Animations initial values for fixed elements
 elem_fixed_logo.style.opacity = "0"

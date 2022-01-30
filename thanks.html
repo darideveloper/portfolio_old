@@ -48,34 +48,26 @@
         </symbol>
     </svg>
 
-    <div class="loading fixed-bg"></div>
+    <div class="loading fixed-bg hide"></div>
     <div class="fixed-bg"></div>
 
-    <header class="">
-        <div class="logo wrapper-img flex-center ">
-            <img src="imgs/logo.png" alt="dari developer logo" class="">
-        </div>
-        <nav class="menu ">
-            <ul class="">
-                <li class="inactive">Projects</li>
-                <li class="inactive">Contact</li>
-            </ul>
-        </nav>
-    </header>
+    <main class="wrapper-thanks flex-center">
+        <div class="thanks flex-center">
 
-    <main class="flex-center main-section">
-        <div class="iam">
-            <p class="up uppercase noselect ">
-                i am
-            </p>
-            <h1 class="name title noselect ">
-                Dari Developer
-            </h1>
-            <p class="down uppercase noselect ">
-                frontend and web scraping <br> developer
-            </p>
+            <div class="logo wrapper-img flex-center ">
+                <img src="imgs/logo.png" alt="dari developer logo" class="">
+            </div>
+            <div class="text">
+                <h1 class="title"> 
+                    <svg>
+                        <use xlink:href="#svg-love"/>
+                    </svg> 
+                    Thanks!
+                </h1>
+                <p>I will contact you by mail and whatsapp as soon as possible!</p>
+                <a href="index.html" class="btn">Go back</a>
+            </div>
         </div>
-
         <div class="socials flex-center ">
             <div class="column flex-center ">
                 <a class="icon facebook" target="_blank" href="https://m.me/darideveloper">
@@ -122,81 +114,10 @@
                 </a>
             </div>
         </div>
-        <div class="scroll inactive">
-            <p class="noselect up transparent ">—</p>
-            <p class="noselect ">SCROLL</p>
-            <p class="noselect down ">—</p>
-        </div>
     </main>
 
-    <div class="projects main-section flex-center hide" id="projects">
-        <div class="wrapper-images">
-            <div class="images flex-center">
-                <div class="wrapper-img flex-center blur left">
-                    <img src="imgs/project-sample.png" alt="project banner">
-                </div>
-                <div class="wrapper-img flex-center active">
-                    <img src="imgs/project-sample.png" alt="project banner">
-                </div>
-                <div class="wrapper-img flex-center blur right">
-                    <img src="imgs/project-sample.png" alt="project banner">
-                </div>
-            </div>
-        </div>
-        <div class="wrapper-info flex-center">
-            <div class="info">
-                <div class="wrapper-title flex-center">
-                    <h2 class="title noselect">Keep Cafe</h2>
-                </div>
-                <p class="details">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet nisl lectus. Nulla facilisi. Integer tristique, tellus ac ultricies iaculis, dolor lorem dignissim justo, in posuere nulla
-                </p>
-                <div class="wrapper-cta flex-center">
-                    <a href="" class="cta btn">view project</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    
-    <div class="contact main-section flex-center hide" id="contact">
-        <div class="info">
-            <h2 class="noselect">About me</h2>
-            <p class="about">If you are a <b>designer</b>, I'll convert your <b>UI / UX design</b> to <b>HTML + CSS + JavaScript</b> code, I can also <b>create a web page</b> for you or your company with <b>Wordpress</b> or even, with my vast experience in <b>web scraping</b> and <b>web automation</b>, I could help you extract website data or automate processes.</p>
-            <h3 class="noselect">Phone</h3>
-            <div class="phone">
-                <a class="" href="tel:+527295162472">+52 729 516 2472</a>
-            </div>
-            <h3 class="noselect">E-mail</h3>
-            <div class="email">
-                <a class="" href="mailto:darideveloper@gmail.com">darideveloper@gmail.com</a>
-            </div>
-        </div>
-        <div class="form">
-            <form action="https://darideveloper.pythonanywhere.com/" method="post">
-                <h2 class="noselect">Hire Me</h2>
-                <div class="inputs">
-                    <input type="text" name="user" id="user" placeholder="Your name" required>
-                    <input type="tel" name="phone" id="phone" placeholder="Your phone">
-                    <input type="email" name="email" id="email" placeholder="Your e-mail" required>
-                    <input type="text" name="body" id="body" placeholder="Message" required>
-                    <input type="text" name="api_key" id="api_key" value="77c341d0397b984f69ef82b49143a5cd" class="hide">
-                    <input type="text" name="redirect" id="redirect" value="https://darideveloper.com/" class="hide">
-                </div>
-                <input type="submit" value="SEND MESSAGE" class="btn">
-            </form>
-        </div>
-    </div>
 
     <script type="text/javascript" src="code/anime.min.js"></script>    
-    <script type="text/javascript" src="code/animations.js"></script>
-    <script type="text/javascript" src="code/globals.js"></script>
-    <script type="text/javascript" src="code/scroll.js"></script>
-    <script type="text/javascript" src="code/scroll-mobile.js"></script>
-    <script type="text/javascript" src="code/data.json"></script>
-    <script type="text/javascript" src="code/projects.js"></script>
-    <script type="text/javascript" src="code/projects_swipe.js"></script>  
-    <script type="text/javascript" src="code/header.js"></script>   
-    <script type="text/javascript" src="code/reload.js"></script> 
+    <script type="text/javascript" src="code/animations_thanks.js"></script>
 </body>
 </html>

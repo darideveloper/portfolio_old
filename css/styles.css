@@ -100,6 +100,20 @@ a {
   box-shadow: 0px 0px 16px 6px rgba(0, 0, 0, 0.8);
 }
 
+.logo {
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+}
+.logo img {
+  width: 100%;
+  height: 100%;
+}
+.logo:hover img {
+  width: 90%;
+  height: 90%;
+}
+
 header {
   height: 80px;
   display: flex;
@@ -112,19 +126,6 @@ header {
   max-width: 1500px;
   width: 100%;
   z-index: 1;
-}
-header .logo {
-  width: 80px;
-  height: 80px;
-  cursor: pointer;
-}
-header .logo img {
-  width: 100%;
-  height: 100%;
-}
-header .logo:hover img {
-  width: 90%;
-  height: 90%;
 }
 header nav ul {
   margin: 0;
@@ -869,6 +870,40 @@ main .scroll.inactive {
   justify-content: center;
   position: absolute;
   z-index: 2;
+}
+
+.wrapper-thanks {
+  width: 100%;
+  height: 100%;
+  margin-top: -100px;
+  flex-direction: colum;
+}
+.wrapper-thanks .thanks .logo {
+  width: 250px;
+  height: 250px;
+}
+.wrapper-thanks .thanks .text {
+  margin-left: 100px;
+}
+.wrapper-thanks .thanks .text h1 {
+  line-height: 50px;
+  margin: 0;
+  margin-bottom: 20px;
+}
+.wrapper-thanks .thanks .text h1 svg {
+  width: 30px;
+  height: 30px;
+  fill: #929294;
+  margin-right: 20px;
+}
+.wrapper-thanks .thanks .text p {
+  margin: 0;
+}
+.wrapper-thanks .thanks .text a {
+  border-radius: 50px;
+  padding: 5px 25px;
+  margin-top: 30px;
+  display: inline-block;
 }
 
 /*# sourceMappingURL=styles.css.map */

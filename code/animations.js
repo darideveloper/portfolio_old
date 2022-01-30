@@ -259,7 +259,7 @@ async function fade_in_main () {
     anim_main_down.play ()
 
     // Wait to animation end
-    await sleep(wait_time*3)
+    await sleep(wait_time*2.1)
 
 }
 
@@ -279,7 +279,7 @@ async function fade_out_main () {
     anim_main_title.play ()
 
     // Reverse animations state
-    await sleep(wait_time*3)
+    await sleep(wait_time*2.1)
     anim_main_title.reverse ()
     anim_main_up.reverse ()
     anim_main_down.reverse ()
@@ -294,7 +294,7 @@ async function fade_in_projects () {
     await sleep(wait_time)
     anim_projects_details.play()
 
-    await sleep(wait_time*3)
+    await sleep(wait_time*2.1)
 }
 
 async function fade_out_projects () {
@@ -312,7 +312,7 @@ async function fade_out_projects () {
 
     
     // Reset animations state
-    await sleep(wait_time*3)
+    await sleep(wait_time*2.1)
     anim_projects_imgs.reverse()
     anim_projects_details.reverse()
 }
@@ -341,7 +341,7 @@ async function fade_in_contact () {
         anim_contact_form.play()
     }
 
-    await sleep(wait_time*3)
+    await sleep(wait_time*2.1)
 
 }
 
@@ -366,7 +366,7 @@ async function fade_out_contact () {
     anim_contact_email.play()
 
     // Reset animations state
-    await sleep(wait_time*3)
+    await sleep(wait_time*2.1)
     anim_contact_info.reverse()
     anim_contact_form.reverse()
     anim_contact_about.reverse()

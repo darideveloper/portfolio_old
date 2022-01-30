@@ -141,7 +141,7 @@ header nav ul li {
   text-transform: uppercase;
   color: #fff;
   font-size: 18px;
-  transition-duration: 0.5s;
+  transition-duration: 1s;
   cursor: pointer;
 }
 header nav ul li:hover {
@@ -540,7 +540,7 @@ main .scroll {
   width: 30px;
   margin-right: calc((100vw - 1500px) / 2 - 15px);
   z-index: 1;
-  transition-duration: 0.5s;
+  transition-duration: 1s;
 }
 main .scroll p {
   transform: rotateZ(90deg);

@@ -376,13 +376,24 @@ async function fade_out_contact () {
 
     await sleep(wait_time/10)
     if (get_display (elem_contact_info) != "none") { 
+        
+        anim_contact_email.play()
+        
+        await sleep(wait_time)
+        anim_contact_phone.play()
+        
+        if (get_display (elem_contact_about) != "none") { 
+            await sleep(wait_time)
+            anim_contact_about.play()
+        }
+        
+        await sleep(wait_time)
         anim_contact_info.play()
-    }
-    anim_contact_form.play()
+        anim_contact_form.play()
 
-    anim_contact_about.play()
-    anim_contact_phone.play()
-    anim_contact_email.play()
+    } else {
+        anim_contact_form.play()
+    }
 
     // Reset animations state
     await sleep(wait_time*2.1)

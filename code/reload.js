@@ -8,4 +8,4 @@ function refresh() {
 
 }
   
-window.onresize = refresh;
+window.onresize = refresh

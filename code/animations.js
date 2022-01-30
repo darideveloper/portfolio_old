@@ -240,6 +240,9 @@ async function anim_on_load () {
     contact_btn.classList.remove ("inactive")
     elem_fixed_scroll.classList.remove ("inactive")
 
+    // Hide loading banner
+    elem_fixed_loading.classList.add ("hide")
+
     // Update animation global state
     animation_running = false
 }

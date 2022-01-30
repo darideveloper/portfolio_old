@@ -26,3 +26,16 @@ contact_btn.addEventListener ("click", async function () {
         }
     }
 })
+
+elem_fixed_logo.addEventListener ("click", async function () {
+    if (! animation_running) {
+        if (current_screen != 1) {
+            animation_running = true
+            last_screen = current_screen
+            current_screen = 1
+            await anim_fade_out ()
+            change_screen ()
+            update_scroll_buttons ()
+        }
+    }
+})

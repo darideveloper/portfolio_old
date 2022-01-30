@@ -103,6 +103,7 @@ main
         width: 30px
         margin-right: calc((100vw - 1500px) / 2 - 15px)
         z-index: 1
+        transition-duration: 0.5s
 
         p
             transform: rotateZ(90deg)
@@ -111,7 +112,7 @@ main
             transition-duration: 0.5s
 
             &.up, &.down
-                padding:30px
+                padding: 30px
                 cursor: pointer
 
                 &:hover
@@ -121,6 +122,10 @@ main
             &.transparent
                 opacity: 0
                 cursor: default
+
+        &.inactive
+            opacity: 0.2
+            cursor: default
 
 
     @media screen and (max-width: 1600px)

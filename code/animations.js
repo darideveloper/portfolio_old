@@ -74,7 +74,7 @@ const animm_fixed_logo = anime({
 
 const anim_fixed_menu = anime({
     targets: elem_fixed_menu,
-    opacity: [0, 1],
+    opacity: [0, 0.2],
     translateX: [50, 0],
     autoplay: false,
     duration: wait_time * 1000 * 2
@@ -90,7 +90,7 @@ const anim_fixed_socials = anime({
 
 const anim_fixed_scroll = anime({
     targets: elem_fixed_scroll,
-    opacity: [0, 1],
+    opacity: [0, 0.2],
     translateX: [50, 0],
     autoplay: false,
     duration: wait_time * 1000 * 2
@@ -220,12 +220,26 @@ async function anim_on_load () {
     await sleep(wait_time)
     await fade_in_main ()
 
+    // Delete menu and scroll styles
+    elem_fixed_menu.setAttribute ("style", "")
+    elem_fixed_scroll.setAttribute ("style", "")
+
+    // Active menu and scroll elements
+    projects_btn.classList.remove ("inactive")
+    contact_btn.classList.remove ("inactive")
+    elem_fixed_scroll.classList.remove ("inactive")
+
     // Update animation global state
     animation_running = false
 }
 
 async function anim_fade_out () {
     // Fade animations for hide elements when page change
+
+    // Deactive menu and scroll elements
+    projects_btn.classList.add ("inactive")
+    contact_btn.classList.add ("inactive")
+    elem_fixed_scroll.classList.add ("inactive")
 
     if (last_screen == 1) {
         await fade_out_main ()
@@ -239,6 +253,7 @@ async function anim_fade_out () {
 async function anim_fade_in () {
     // Fade animations for show elements when page change
 
+    
     if (current_screen == 1) {
         await fade_in_main ()
     } else if (current_screen == 2) {
@@ -246,7 +261,11 @@ async function anim_fade_in () {
     } else if (current_screen == 3) {
         await fade_in_contact ()
     }
-
+    
+    // Active menu and scroll elements
+    projects_btn.classList.remove ("inactive")
+    contact_btn.classList.remove ("inactive")
+    elem_fixed_scroll.classList.remove ("inactive")
 }
 
 async function fade_in_main () {

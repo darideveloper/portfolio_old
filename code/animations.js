@@ -3,6 +3,7 @@ const elem_fixed_logo = document.querySelector("header .logo")
 const elem_fixed_socials = document.querySelector("main .socials")
 const elem_fixed_menu = document.querySelector("header .menu")
 const elem_fixed_scroll = document.querySelector("main .scroll")
+const elem_fixed_loading = document.querySelector(".loading")
 
 // Main elements
 const elem_main_up = document.querySelector("main .iam .up")
@@ -95,6 +96,14 @@ const anim_fixed_scroll = anime({
     autoplay: false,
     duration: wait_time * 1000 * 2
 });
+
+const anim_fixed_loading = anime({
+    targets: elem_fixed_loading,
+    opacity: [1, 0],
+    autoplay: false,
+    duration: wait_time * 1000 / 10
+});
+
 
 // Animations main objects
 const anim_main_title = anime({
@@ -195,6 +204,8 @@ async function anim_on_load () {
     // Animate fixed elements when page loads
 
     await sleep(wait_time)
+
+    anim_fixed_loading.play ()
 
     if (get_display (elem_fixed_logo) != "none") {
         await sleep(wait_time/4)

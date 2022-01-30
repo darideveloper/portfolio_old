@@ -8,9 +8,9 @@ async function vHandleGesture() {
   // Detect when user hide search bar
 
   if (! animation_running) {
-    animation_running = true
     if (start_height == start_height) {
       if (!sliding) {
+        animation_running = true
         if (touchendY < touchstartY) {
           await incress_screen_counter ()
         }

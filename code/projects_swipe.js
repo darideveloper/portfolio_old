@@ -13,7 +13,7 @@ slider.addEventListener('touchend', e => {
 })
 
 function hHandleGesture() {
-  if (!sliding) {
+  if (!sliding && !animation_running) {
     if (touchendX < touchstartX) {
       slide_projects (next=true, last_image=image_left, new_image=image_right)
     }

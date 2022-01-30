@@ -668,6 +668,7 @@ main .scroll.inactive {
   margin: 0;
   transition-duration: 0.5s;
   position: relative;
+  cursor: pointer;
 }
 .projects .wrapper-images .images .wrapper-img.active {
   filter: grayscale(60%);
@@ -675,7 +676,6 @@ main .scroll.inactive {
   width: 53.3333333333vh;
   min-width: 53.3333333333vh;
   height: 40vh;
-  cursor: pointer;
 }
 .projects .wrapper-images .images .wrapper-img.active:hover {
   filter: grayscale(0%);

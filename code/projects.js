@@ -4,6 +4,8 @@ const projects = document.querySelector (".projects")
 // Details elements
 const details_title = document.querySelector ("div.projects > div.wrapper-info > .info h2")
 const details_description = document.querySelector ("div.projects > div.wrapper-info > .info p")
+const details_cta = document.querySelector ("div.projects > div.wrapper-info > .info a.cta")
+
 
 // Images elements
 var image_right
@@ -32,12 +34,17 @@ function update_listeners () {
     image_left.addEventListener ("click", function (e) {
         slide_projects (next=false, last_image=image_right, new_image=image_left)
     })
+    image_active.addEventListener ("click", function (e) {
+        window.open(projects_data[current_image]["link"], '_blank')
+    })
+
 }
 
 function update_details () {
     // Update title and description
     details_title.innerHTML = projects_data[current_image]["title"]
     details_description.innerHTML = projects_data[current_image]["description"]
+    details_cta.setAttribute ("href", projects_data[current_image]["link"])
 }
 
 update_listeners ()

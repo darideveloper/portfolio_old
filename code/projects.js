@@ -47,10 +47,12 @@ update_details ()
 if (window.screen.height > window.screen.width) {
     images_wrapper.classList.add ("vertical")
     projects.classList.add ("vertical")
+    elem_fixed_menu.classList.add ("vertical")
     vertical = true
 } else {
     images_wrapper.classList.add ("horizontal")
     projects.classList.add ("horizontal")
+    elem_fixed_menu.classList.add ("horizontal")
 }
 
 // Set default images

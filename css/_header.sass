@@ -44,13 +44,7 @@ header
                 color: $color_d
                 font-size: 18px
                 transition-duration: 1s
-                cursor: pointer
-
-                    
-
-                &:hover
-                    text-shadow: 0px 0px 20px $color_e
-                    opacity: 1
+                cursor: pointer                    
 
                 &:nth-child(2)
                     padding-right: 0
@@ -60,10 +54,13 @@ header
                     cursor: default
                     
                     &:hover
-                        text-shadow: none
-                        opacity: 0.2
+                        text-shadow: none !important
+                        opacity: 0.2 !important
 
-
+        &.horizontal
+            ul li:hover
+                text-shadow: 0px 0px 20px $color_e
+                opacity: 1
 
 
     @media screen and (max-width: 1600px)

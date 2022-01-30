@@ -10,14 +10,17 @@ async function vHandleGesture() {
   if (! animation_running) {
     if (start_height == start_height) {
       if (!sliding) {
-        animation_running = true
+        console.log ("scrolling mobile")
         if (touchendY < touchstartY) {
+          animation_running = true
           await incress_screen_counter ()
+          change_screen ()
         }
         if (touchendY > touchstartY) {
+          animation_running = true
           await decress_screen_counter ()
+          change_screen ()
         }
-        change_screen ()
       }
     }
   }

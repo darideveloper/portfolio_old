@@ -1,8 +1,6 @@
 const scrollableElement = document.body;
 const scroll_button_up = document.querySelector ("main .scroll .up")
 const scroll_button_down = document.querySelector ("main .scroll .down")
-const header_projects = document.querySelector ("header .menu ul i:nth-child(1)")
-const header_contact = document.querySelector ("header .menu ul i:nth-child(2)")
 const section_main = document.querySelector ("main.main-section > .iam")
 const section_projects = document.querySelector (".main-section.projects")
 const section_contact = document.querySelector (".main-section.contact")
@@ -14,6 +12,7 @@ scrollableElement.addEventListener('wheel', async function (event) {
 
     if (! animation_running) {
         animation_running = true
+        console.log ("wheel event")
         if (scroll_up(event)) {
             // Scroll up
             await decress_screen_counter ()
@@ -31,6 +30,7 @@ scroll_button_up.addEventListener ("click", async function (e) {
     if (! animation_running) {
         if ( !scroll_button_up.classList.contains ("transparent")) {
             animation_running = true
+            console.log ("scroll up")
             await decress_screen_counter ()
             change_screen ()
         }
@@ -42,16 +42,12 @@ scroll_button_down.addEventListener ("click", async function (e) {
     if (! animation_running) {
         if ( !scroll_button_down.classList.contains ("transparent")) {
             animation_running = true
+            console.log ("scroll down")
             await incress_screen_counter ()
             change_screen ()
         }
     }
 })
-
-elem_fixed_menu.addEventListener ("click", function (e) {
-    go_contact ()
-})
-
 
 async function decress_screen_counter () {
 

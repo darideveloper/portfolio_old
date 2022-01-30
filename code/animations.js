@@ -11,9 +11,7 @@ const elem_main_down = document.querySelector("main .iam .down")
 
 // Projects elements
 const elem_projects_imgs = document.querySelector(".projects .wrapper-images")
-const elem_projects_title = document.querySelector(".projects .info .wrapper-title")
-const elem_projects_text = document.querySelector(".projects .info .details")
-const elem_projects_cta = document.querySelector(".projects .info .cta")
+const elem_projects_details = document.querySelector(".projects .info")
 
 // Contact elements
 const elem_contact_info = document.querySelector(".contact .info")
@@ -47,14 +45,10 @@ elem_main_title.style.transform = "translateY(50px)"
 
 // Animations initial values for projects
 elem_projects_imgs.style.opacity = "0"
-elem_projects_title.style.opacity = "0"
-elem_projects_text.style.opacity = "0"
-elem_projects_cta.style.opacity = "0"
+elem_projects_details.style.opacity = "0"
 
-elem_projects_imgs.style.transform = "translateX(-50px)"
-elem_projects_title.style.transform = "translateX(50px)"
-elem_projects_text.style.transform = "translateX(-50px)"
-elem_projects_cta.style.transform = "translateX(50px)"
+elem_projects_imgs.style.transform = "translateY(-50px)"
+elem_projects_details.style.transform = "translateY(50px)"
 
 // Animations initial values for contact
 elem_contact_info.style.opacity = "0"
@@ -131,34 +125,19 @@ const anim_main_down = anime({
 const anim_projects_imgs = anime({
     targets: elem_projects_imgs,
     opacity: [0, 1],
-    translateX: [-50, 0],
+    translateY: [-50, 0],
     autoplay: false,
     duration: wait_time * 1000 * 2
 });
 
-const anim_projects_title = anime({
-    targets: elem_projects_title,
+const anim_projects_details = anime({
+    targets: elem_projects_details,
     opacity: [0, 1],
-    translateX: [50, 0],
+    translateY: [50, 0],
     autoplay: false,
     duration: wait_time * 1000 * 2
 });
 
-const anim_projects_text = anime({
-    targets: elem_projects_text,
-    opacity: [0, 1],
-    translateX: [-50, 0],
-    autoplay: false,
-    duration: wait_time * 1000 * 2
-});
-
-const anim_projects_cta = anime({
-    targets: elem_projects_cta,
-    opacity: [0, 1],
-    translateX: [-50, 0],
-    autoplay: false,
-    duration: wait_time * 1000 * 2
-});
 
 // Animations contacts objects
 const anim_contact_info = anime({
@@ -287,8 +266,6 @@ async function fade_in_main () {
 async function fade_out_main () {
     // Main section animation order for fade out
 
-    console.log ("out main")
-
     // Invert animations
     anim_main_title.reverse()
     anim_main_up.reverse()
@@ -315,15 +292,7 @@ async function fade_in_projects () {
     anim_projects_imgs.play()
 
     await sleep(wait_time)
-    anim_projects_title.play()
-
-    if (get_display (elem_projects_text) != "none") { 
-        await sleep(wait_time)
-        anim_projects_text.play()
-    }
-
-    await sleep(wait_time)
-    anim_projects_cta.play()
+    anim_projects_details.play()
 
     await sleep(wait_time*3)
 }
@@ -333,31 +302,19 @@ async function fade_out_projects () {
     
     // Invert animations
     anim_projects_imgs.reverse()
-    anim_projects_title.reverse()
-    anim_projects_text.reverse()
-    anim_projects_cta.reverse()
+    anim_projects_details.reverse()
 
     await sleep(wait_time/10)
     anim_projects_imgs.play()
 
     await sleep(wait_time)
-    anim_projects_title.play()
-
-    if (get_display (elem_projects_text) != "none") { 
-        await sleep(wait_time)
-        anim_projects_text.play()
-    }
-
-    await sleep(wait_time)
-    anim_projects_cta.play()
+    anim_projects_details.play()
 
     
     // Reset animations state
     await sleep(wait_time*3)
     anim_projects_imgs.reverse()
-    anim_projects_title.reverse()
-    anim_projects_text.reverse()
-    anim_projects_cta.reverse()
+    anim_projects_details.reverse()
 }
 
 

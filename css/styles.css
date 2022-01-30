@@ -641,6 +641,7 @@ main .scroll p.transparent {
 }
 .projects .wrapper-images .images .wrapper-img {
   margin: 0;
+  transition-duration: 0.5s;
   position: relative;
 }
 .projects .wrapper-images .images .wrapper-img.active {
@@ -661,6 +662,7 @@ main .scroll p.transparent {
   height: 24vh;
 }
 .projects .wrapper-images .images .wrapper-img.blur img {
+  transition-duration: 0.5s;
   position: absolute;
   top: 0;
 }
@@ -713,6 +715,7 @@ main .scroll p.transparent {
   color: #d1d1d1;
   display: inline-block;
   text-transform: uppercase;
+  transition-duration: 0.5s;
 }
 .projects .wrapper-info .info .wrapper-title .title.on-change {
   opacity: 0;
@@ -722,6 +725,7 @@ main .scroll p.transparent {
   line-height: 35px;
   width: 70%;
   margin: 0 auto;
+  transition-duration: 0.5s;
 }
 .projects .wrapper-info .info .details.on-change {
   opacity: 0;

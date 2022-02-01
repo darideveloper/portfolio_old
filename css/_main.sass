@@ -58,7 +58,7 @@ main
             margin-right: 100px
 
         p
-            transition-duration: 0.25s
+            transition-duration: $transition-duration
 
     .socials
         position: fixed
@@ -88,7 +88,7 @@ main
                     height: 100%
                     fill: $color_d
                     opacity: 0.4
-                    transition-duration: 0.5s
+                    transition-duration: $transition-duration
 
     .scroll
         display: flex
@@ -103,13 +103,13 @@ main
         width: 30px
         margin-right: calc((100vw - 1500px) / 2 - 15px)
         z-index: 1
-        transition-duration: 1s
+        transition-duration: $transition-duration
 
         p
             transform: rotateZ(90deg)
             display: block
             margin-top: 0
-            transition-duration: 0.5s
+            transition-duration: $transition-duration
 
             &.up, &.down
                 padding: 30px

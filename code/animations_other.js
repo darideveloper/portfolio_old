@@ -7,7 +7,7 @@ const elem_text = document.querySelector ("p")
 const elem_link = document.querySelector ("a")
 
 // Animations time
-const wait_time = 0.5
+const wait_time = 0.3
 
 // Initail values for animations
 elem_logo.style.opacity = "0"

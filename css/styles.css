@@ -94,7 +94,7 @@ a {
 
 .btn {
   box-shadow: 4px 4px 12px 4px rgba(0, 0, 0, 0.5);
-  transition-duration: 0.25s;
+  transition-duration: 0.3s;
 }
 .btn:hover {
   box-shadow: 0px 0px 16px 6px rgba(0, 0, 0, 0.8);
@@ -148,7 +148,7 @@ header nav ul li {
   text-transform: uppercase;
   color: #fff;
   font-size: 18px;
-  transition-duration: 1s;
+  transition-duration: 0.3s;
   cursor: pointer;
 }
 header nav ul li:nth-child(2) {
@@ -511,7 +511,7 @@ main .iam .down {
   margin-right: 100px;
 }
 main .iam p {
-  transition-duration: 0.25s;
+  transition-duration: 0.3s;
 }
 main .socials {
   position: fixed;
@@ -540,7 +540,7 @@ main .socials .column .icon svg {
   height: 100%;
   fill: #fff;
   opacity: 0.4;
-  transition-duration: 0.5s;
+  transition-duration: 0.3s;
 }
 main .scroll {
   display: flex;
@@ -554,13 +554,13 @@ main .scroll {
   width: 30px;
   margin-right: calc((100vw - 1500px) / 2 - 15px);
   z-index: 1;
-  transition-duration: 1s;
+  transition-duration: 0.3s;
 }
 main .scroll p {
   transform: rotateZ(90deg);
   display: block;
   margin-top: 0;
-  transition-duration: 0.5s;
+  transition-duration: 0.3s;
 }
 main .scroll p.up, main .scroll p.down {
   padding: 30px;
@@ -666,7 +666,7 @@ main .scroll.inactive {
 }
 .projects .wrapper-images .images .wrapper-img {
   margin: 0;
-  transition-duration: 0.5s;
+  transition-duration: 0.3s;
   position: relative;
   cursor: pointer;
 }
@@ -687,7 +687,7 @@ main .scroll.inactive {
   height: 24vh;
 }
 .projects .wrapper-images .images .wrapper-img.blur img {
-  transition-duration: 0.5s;
+  transition-duration: 0.3s;
   position: absolute;
   top: 0;
 }
@@ -740,7 +740,7 @@ main .scroll.inactive {
   color: #d1d1d1;
   display: inline-block;
   text-transform: uppercase;
-  transition-duration: 0.5s;
+  transition-duration: 0.3s;
 }
 .projects .wrapper-info .info .wrapper-title .title.on-change {
   opacity: 0;
@@ -750,7 +750,7 @@ main .scroll.inactive {
   line-height: 35px;
   width: 70%;
   margin: 0 auto;
-  transition-duration: 0.5s;
+  transition-duration: 0.3s;
 }
 .projects .wrapper-info .info .details.on-change {
   opacity: 0;

@@ -22,7 +22,7 @@ scrollableElement.addEventListener('wheel', async function (event) {
         }
     
         change_screen ()
-    }
+    } 
 })
 
 scroll_button_up.addEventListener ("click", async function (e) {

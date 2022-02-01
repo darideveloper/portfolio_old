@@ -23,6 +23,8 @@ async function vHandleGesture() {
         }
       }
     }
+  } else {
+    wait_message ()
   }
 }
 

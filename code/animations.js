@@ -1,14 +1,14 @@
 // Fixed elements
 const elem_fixed_logo = document.querySelector("header .logo")
-const elem_fixed_socials = document.querySelector("main .socials")
+const elem_fixed_socials = document.querySelector(".hero .socials")
 const elem_fixed_menu = document.querySelector("header .menu")
-const elem_fixed_scroll = document.querySelector("main .scroll")
+const elem_fixed_scroll = document.querySelector(".hero .scroll")
 const elem_fixed_loading = document.querySelector(".loading")
 
-// Main elements
-const elem_main_up = document.querySelector("main .iam .up")
-const elem_main_title = document.querySelector("main .iam .title")
-const elem_main_down = document.querySelector("main .iam .down")
+// hero elements
+const elem_hero_up = document.querySelector(".hero .iam .up")
+const elem_hero_title = document.querySelector(".hero .iam .title")
+const elem_hero_down = document.querySelector(".hero .iam .down")
 
 // Projects elements
 const elem_projects_imgs = document.querySelector(".projects .wrapper-images")
@@ -36,13 +36,13 @@ elem_fixed_menu.style.transform = "translateX(50px)"
 elem_fixed_scroll.style.transform = "translateX(50px)"
 
 // Animations initial values for iam
-elem_main_up.style.opacity = "0"
-elem_main_down.style.opacity = "0"
-elem_main_title.style.opacity = "0"
+elem_hero_up.style.opacity = "0"
+elem_hero_down.style.opacity = "0"
+elem_hero_title.style.opacity = "0"
 
-elem_main_up.style.transform = "translateX(-50px)"
-elem_main_down.style.transform = "translateX(50px)"
-elem_main_title.style.transform = "translateY(50px)"
+elem_hero_up.style.transform = "translateX(-50px)"
+elem_hero_down.style.transform = "translateX(50px)"
+elem_hero_title.style.transform = "translateY(50px)"
 
 // Animations initial values for projects
 elem_projects_imgs.style.opacity = "0"
@@ -105,25 +105,25 @@ const anim_fixed_loading = anime({
 });
 
 
-// Animations main objects
-const anim_main_title = anime({
-    targets: elem_main_title,
+// Animations hero objects
+const anim_hero_title = anime({
+    targets: elem_hero_title,
     opacity: [0, 1],
     translateY: [50, 0],
     autoplay: false,
     duration: wait_time * 1000 * 2
 });
 
-const anim_main_up = anime({
-    targets: elem_main_up,
+const anim_hero_up = anime({
+    targets: elem_hero_up,
     opacity: [0, 1],
     translateX: [-50, 0],
     autoplay: false,
     duration: wait_time * 1000 * 2
 });
 
-const anim_main_down = anime({
-    targets: elem_main_down,
+const anim_hero_down = anime({
+    targets: elem_hero_down,
     opacity: [0, 1],
     translateX: [50, 0],
     autoplay: false,
@@ -229,7 +229,7 @@ async function anim_on_load () {
     
     // Show home fade in animations
     await sleep(wait_time)
-    await fade_in_main ()
+    await fade_in_hero ()
 
     // Delete menu and scroll styles
     elem_fixed_menu.setAttribute ("style", "")
@@ -256,7 +256,7 @@ async function anim_fade_out () {
     elem_fixed_scroll.classList.add ("inactive")
 
     if (last_screen == 1) {
-        await fade_out_main ()
+        await fade_out_hero ()
     } else if (last_screen == 2) {
         await fade_out_projects ()
     } else if (last_screen == 3) {
@@ -269,7 +269,7 @@ async function anim_fade_in () {
 
     
     if (current_screen == 1) {
-        await fade_in_main ()
+        await fade_in_hero ()
     } else if (current_screen == 2) {
         await fade_in_projects ()
     } else if (current_screen == 3) {
@@ -282,40 +282,40 @@ async function anim_fade_in () {
     elem_fixed_scroll.classList.remove ("inactive")
 }
 
-async function fade_in_main () {
-    // Main section animation order for fade in
+async function fade_in_hero () {
+    // hero section animation order for fade in
 
-    anim_main_title.play ()
+    anim_hero_title.play ()
 
     await sleep(wait_time)
-    anim_main_up.play ()
-    anim_main_down.play ()
+    anim_hero_up.play ()
+    anim_hero_down.play ()
 
     // Wait to animation end
     await sleep(wait_time*2.1)
 
 }
 
-async function fade_out_main () {
-    // Main section animation order for fade out
+async function fade_out_hero () {
+    // hero section animation order for fade out
 
     // Invert animations
-    anim_main_title.reverse()
-    anim_main_up.reverse()
-    anim_main_down.reverse()
+    anim_hero_title.reverse()
+    anim_hero_up.reverse()
+    anim_hero_down.reverse()
     
     await sleep(wait_time/10)
-    anim_main_up.play ()
-    anim_main_down.play ()
+    anim_hero_up.play ()
+    anim_hero_down.play ()
     
     await sleep(wait_time)
-    anim_main_title.play ()
+    anim_hero_title.play ()
 
     // Reverse animations state
     await sleep(wait_time*2.1)
-    anim_main_title.reverse ()
-    anim_main_up.reverse ()
-    anim_main_down.reverse ()
+    anim_hero_title.reverse ()
+    anim_hero_up.reverse ()
+    anim_hero_down.reverse ()
 
 }
 

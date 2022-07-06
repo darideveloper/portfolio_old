@@ -1,7 +1,7 @@
 const scrollableElement = document.body;
-const scroll_button_up = document.querySelector ("main .scroll .up")
-const scroll_button_down = document.querySelector ("main .scroll .down")
-const section_main = document.querySelector ("main.main-section > .iam")
+const scroll_button_up = document.querySelector (".hero .scroll .up")
+const scroll_button_down = document.querySelector (".hero .scroll .down")
+const section_hero = document.querySelector (".hero.main-section > .iam")
 const section_projects = document.querySelector (".main-section.projects")
 const section_contact = document.querySelector (".main-section.contact")
 let last_screen = 0
@@ -82,13 +82,13 @@ async function change_screen () {
         update_scroll_buttons ()
     
         // Hide all screens
-        section_main.classList.add ("hide")
+        section_hero.classList.add ("hide")
         section_projects.classList.add ("hide")
         section_contact.classList.add ("hide")
     
         // Show active screen
         if (current_screen == 1) {
-            section_main.classList.remove ("hide")
+            section_hero.classList.remove ("hide")
         } else if (current_screen == 2) {
             section_projects.classList.remove ("hide")
         } else if (current_screen == 3) {

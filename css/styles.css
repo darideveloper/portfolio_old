@@ -11,7 +11,7 @@ body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
   color: #929294;
-  font-size: 18px;
+  font-size: 16px;
   overflow: hidden;
 }
 
@@ -20,11 +20,11 @@ body {
 }
 
 h2 {
-  font-size: 50px;
+  font-size: 40px;
 }
 
 h3 {
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .wrapper-img {
@@ -42,10 +42,10 @@ h3 {
 }
 
 p {
-  font-size: 18px;
+  font-size: 16px;
 }
 p.small {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .hide {
@@ -148,7 +148,7 @@ header nav ul li {
   list-style: none;
   text-transform: uppercase;
   color: #fff;
-  font-size: 18px;
+  font-size: 16px;
   transition-duration: 0.3s;
   cursor: pointer;
 }
@@ -245,7 +245,7 @@ header nav.horizontal ul li:hover {
 .contact .form form input:focus {
   outline: none;
   border-bottom: 2px solid #929294;
-  font-size: 20px;
+  font-size: 16px;
 }
 .contact .form form input[type=submit] {
   border: none;
@@ -460,19 +460,19 @@ header nav.horizontal ul li:hover {
   font-size: 100px;
 }
 
-main .iam {
+.hero .iam {
   padding: 4vw;
 }
-main .iam:hover .name::before {
+.hero .iam:hover .name::before {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
-main .iam:hover p {
+.hero .iam:hover p {
   margin-right: 10px;
   margin-left: 10px;
 }
-main .iam .name {
-  font-size: min(10vw, 150px);
+.hero .iam .name {
+  font-size: min(8vw, 120px);
   margin: 0;
   text-shadow: 0px 0px 4vw black;
   font-weight: bold;
@@ -483,11 +483,11 @@ main .iam .name {
   cursor: default;
   padding-top: 0;
 }
-main .iam .name::before {
+.hero .iam .name::before {
   transform: scaleX(0);
   transform-origin: bottom right;
 }
-main .iam .name::before {
+.hero .iam .name::before {
   content: " ";
   display: block;
   position: absolute;
@@ -500,21 +500,21 @@ main .iam .name::before {
   z-index: -1;
   transition: transform 0.25s ease;
 }
-main .iam .uppercase {
+.hero .iam .uppercase {
   text-transform: uppercase;
 }
-main .iam .up {
+.hero .iam .up {
   text-align: left;
   margin-left: 100px;
 }
-main .iam .down {
+.hero .iam .down {
   text-align: right;
   margin-right: 100px;
 }
-main .iam p {
+.hero .iam p {
   transition-duration: 0.3s;
 }
-main .socials {
+.hero .socials {
   position: fixed;
   left: 0;
   top: calc(100vh - 184px - 25px);
@@ -522,28 +522,28 @@ main .socials {
   margin-left: calc((100vw - 1500px) / 2);
   z-index: 1;
 }
-main .socials .column {
+.hero .socials .column {
   flex-direction: column;
 }
-main .socials .column .icon {
+.hero .socials .column .icon {
   width: 20px;
   height: 20px;
   padding: 10px;
   margin: 2px;
 }
-main .socials .column .icon:hover svg {
+.hero .socials .column .icon:hover svg {
   filter: drop-shadow(0 0 10px #739cc4);
   opacity: 1;
   fill: #739cc4;
 }
-main .socials .column .icon svg {
+.hero .socials .column .icon svg {
   width: 100%;
   height: 100%;
   fill: #fff;
   opacity: 0.4;
   transition-duration: 0.3s;
 }
-main .scroll {
+.hero .scroll {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -557,47 +557,47 @@ main .scroll {
   z-index: 1;
   transition-duration: 0.3s;
 }
-main .scroll p {
+.hero .scroll p {
   transform: rotateZ(90deg);
   display: block;
   margin-top: 0;
   transition-duration: 0.3s;
 }
-main .scroll p.up, main .scroll p.down {
+.hero .scroll p.up, .hero .scroll p.down {
   padding: 30px;
   cursor: pointer;
 }
-main .scroll p.up:hover, main .scroll p.down:hover {
+.hero .scroll p.up:hover, .hero .scroll p.down:hover {
   text-shadow: 0px 0px 5px #739cc4;
   font-weight: bold;
 }
-main .scroll p.transparent {
+.hero .scroll p.transparent {
   opacity: 0;
   cursor: default;
 }
-main .scroll.inactive {
+.hero .scroll.inactive {
   opacity: 0.2;
   cursor: default;
 }
 @media screen and (max-width: 1600px) {
-  main .socials {
+  .hero .socials {
     margin-left: 50px;
   }
-  main .scroll {
+  .hero .scroll {
     margin-right: 50px;
   }
 }
 @media screen and (max-width: 800px) {
-  main .iam .name {
+  .hero .iam .name {
     font-size: 12vw;
   }
-  main .iam .up {
+  .hero .iam .up {
     margin-left: 20px;
   }
-  main .iam .down {
+  .hero .iam .down {
     margin-right: 20px;
   }
-  main .socials {
+  .hero .socials {
     width: 100%;
     margin: 0;
     padding: 0;
@@ -605,37 +605,37 @@ main .scroll.inactive {
     bottom: 25px;
     top: initial;
   }
-  main .socials .column {
+  .hero .socials .column {
     flex-direction: row;
   }
-  main .scroll {
+  .hero .scroll {
     display: none;
   }
 }
 @media screen and (max-width: 800px) and (max-height: 425px) {
-  main .socials {
+  .hero .socials {
     display: none !important;
   }
 }
 @media screen and (max-width: 500px) {
-  main .uppercase {
+  .hero .uppercase {
     font-size: 12px;
   }
 }
 @media screen and (max-width: 500px) and (max-height: 425px) {
-  main .socials {
+  .hero .socials {
     display: none !important;
   }
 }
 @media screen and (max-width: 400px) {
-  main .socials {
+  .hero .socials {
     flex-direction: column;
     height: 80px;
     bottom: 15px;
   }
 }
 @media screen and (max-width: 400px) and (max-height: 425px) {
-  main .socials {
+  .hero .socials {
     display: none !important;
   }
 }
@@ -657,6 +657,8 @@ main .scroll.inactive {
 .projects {
   position: relative;
   flex-direction: column;
+  bottom: 0;
+  height: 100vh;
 }
 .projects .wrapper-images {
   width: 100vw;
@@ -735,7 +737,7 @@ main .scroll.inactive {
   margin: 20px 0;
 }
 .projects .wrapper-info .info .wrapper-title .title {
-  font-size: 80px;
+  font-size: 40px;
   margin: 0;
   text-shadow: 0px 0px 10px black;
   color: #d1d1d1;

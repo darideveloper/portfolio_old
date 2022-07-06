@@ -2,9 +2,9 @@
 const projects = document.querySelector (".projects") 
 
 // Details elements
-const details_title = document.querySelector ("div.projects > div.wrapper-info > .info h2")
-const details_description = document.querySelector ("div.projects > div.wrapper-info > .info p")
-const details_cta = document.querySelector ("div.projects > div.wrapper-info > .info a.cta")
+const details_title = document.querySelector (".projects > .wrapper-info > .info h2")
+const details_description = document.querySelector (".projects > .wrapper-info > .info p")
+const details_cta = document.querySelector (".projects > .wrapper-info > .info a.cta")
 
 
 // Images elements
@@ -23,10 +23,10 @@ var vertical = false
 
 function update_listeners () {
     
-    image_right = document.querySelector ("div.projects > div.wrapper-images > .images > .wrapper-img.right")
-    image_left = document.querySelector ("div.projects > div.wrapper-images > .images > .wrapper-img.left")
-    image_active = document.querySelector ("div.projects > div.wrapper-images > .images > .wrapper-img.active")
-    images_wrapper = document.querySelector ("div.projects > div.wrapper-images > .images")
+    image_right = document.querySelector (".projects > .wrapper-images > .images > .wrapper-img.right")
+    image_left = document.querySelector (".projects > .wrapper-images > .images > .wrapper-img.left")
+    image_active = document.querySelector (".projects > .wrapper-images > .images > .wrapper-img.active")
+    images_wrapper = document.querySelector (".projects > .wrapper-images > .images")
     
     image_right.addEventListener ("click", function (e) {
         slide_projects (next=true, last_image=image_left, new_image=image_right)

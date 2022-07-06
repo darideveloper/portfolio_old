@@ -18,8 +18,9 @@ tags = {
 projects = {
     "front-end": {
         "global-categories": ["html", "css", "js", "hover"],
-        "projects": {
-            "joe manfred": {
+        "projects": [
+            {
+                "name": "joe manfred",
                 "web": "https://darihernandez.github.io/joe_manfred/",
                 "description": "Web portfolio for the artist Joe Manfred.",
                 "tags": ["responsive", "own-design"],
@@ -28,16 +29,18 @@ projects = {
                     "link": ""
                 }
             },
-            "bakery shop": {
+            {
+                "name": "bakery shop",
                 "web": "https://darihernandez.github.io/bakery-shop/",
-                "description": "Landing page for yoga school.",
+                "description": "Landing page for bakery shop.",
                 "tags": ["aos", "spa"],
                 "designer": {
                     "name": "Elizaveta Shevchenko",
                     "link": "https://www.behance.net/Liza1234163bff"
                 }
             },
-            "yoga studio": {
+            {
+                "name": "yoga studio",
                 "web": "https://darihernandez.github.io/yoga-studio/",
                 "description": "Landing page for yoga school.",
                 "tags": ["responsive", "aos", "spa"],
@@ -46,7 +49,8 @@ projects = {
                     "link": "https://www.behance.net/annabelle"
                 }
             },
-            "travel agency": {
+            {
+                "name": "travel agency",
                 "web": "https://darihernandez.github.io/travel-agency/",
                 "description": "Landing page for Spain travel agency",
                 "tags": ["responsive", "aos", "spa"],
@@ -55,7 +59,8 @@ projects = {
                     "link": "rybakdariaa@gmail.com"
                 }
             },
-            "kdrops healthy body": {
+            {
+                "name": "kdrops healthy body",
                 "web": "https://kdropshealthybody.com/",
                 "description": "Landing page for weight loss products",
                 "tags": ["responsive", "aos", "client", "es", "spa", "accessibility", "own-design"],
@@ -64,7 +69,8 @@ projects = {
                     "link": ""
                 }
             }, 
-            "optima": {
+            {
+                "name": "optima",
                 "web": "https://optimaempresas.com/",
                 "description": "Website for the accounting firm 'Optima, consulta y servicios empresariales'",
                 "tags": ["responsive", "client", "es", "contact-form"],
@@ -73,7 +79,8 @@ projects = {
                     "link": "http://html.rudhisasmito.com/finanzi/contact.html"
                 }
             },
-            "cancun concierge": {
+            {
+                "name": "cancun concierge",
                 "web": "http://cancunconciergedmc.com/",
                 "description": "Website for the travel agency 'Cancun Concierge'",
                 "tags": ["responsive", "client", "multilanguaje", "own-design"],
@@ -82,33 +89,36 @@ projects = {
                     "link": ""
                 }
             },
-            "keagan's kloset boutique": {
+            {
+                "name": "keagan's kloset boutique",
                 "web": "https://www.keagansklosetboutique.com/",
-                "description": "Website for the For online children's clothing store 'Keagan's Kloset Boutique'",
+                "description": "Website for the for online children's clothing store 'Keagan's Kloset Boutique'",
                 "tags": ["responsive", "client", "contact-form", "django", "stripe"],
                 "designer": {
                     "name": "Usf Satoor",
                     "link": "https://www.behance.net/usfsatoor"
                 }
             },
-            "ohio health md": {
+            {
+                "name": "ohio health md",
                 "web": "https://darihernandez.github.io/ohiohealthmd/",
-                "description": "Clone of OhioHealth page of the doctor 'Gregory H Decker, MD'",
+                "description": "Clone page of OhioHealth page of the doctor 'Gregory H Decker, MD'",
                 "tags": ["responsive", "aos", "client", "contact-form"],
                 "designer": {
                     "name": "OhioHealth",
                     "link": "https://www.ohiohealth.com/"
                 }
             },
-            "aprender chino hoy": {
+            {
+                "name": "aprender chino hoy",
                 "web": "http://aprenderchinohoy.com/",
                 "description": "Landing page for chinese course in Span",
                 "tags": ["responsive", "client", "contact-form", "es"],
                 "designer": {
-                    "name": "Usf Satoor",
-                    "link": "https://www.behance.net/usfsatoor"
+                    "name": "own",
+                    "link": ""
                 }
             }
-        }
+        ]
     }
 }

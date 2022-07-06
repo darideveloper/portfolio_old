@@ -14,7 +14,7 @@ var image_active
 var images_wrapper
 
 // Json data variables
-const projects_data = JSON.parse (data)
+const projects_data = data
 var current_image = 1
 const max_images = projects_data.length
 
@@ -169,7 +169,7 @@ async function slide_projects (next, last_image, new_image) {
     }
 
     // Remove extra classed in ther added image
-    selector =  "div.projects > div.wrapper-images > .images > .wrapper-img." + added_image_position
+    selector =  ".projects > .wrapper-images > .images > .wrapper-img." + added_image_position
     let added_image_elem = document.querySelector (selector)
     if (vertical) {
         await sleep(0.02)

@@ -751,7 +751,7 @@ header nav.horizontal ul li:hover {
 .projects .wrapper-info .info .details {
   text-align: center;
   line-height: 35px;
-  width: 70%;
+  width: 100%;
   margin: 0 auto;
   transition-duration: 0.3s;
 }
@@ -765,7 +765,7 @@ header nav.horizontal ul li:hover {
 }
 @media screen and (max-width: 1500px) {
   .projects .wrapper-info .info .details {
-    width: 60%;
+    width: 80%;
   }
 }
 @media screen and (max-width: 1500px) and (max-height: 550px) {

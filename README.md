@@ -41,27 +41,27 @@ Project type: **personal's project**
 
 # Media
 
-![home](https://github.com/darideveloper/portfolio/blob/master/videos/home.mp4?raw=true)
+[home](https://github.com/darideveloper/portfolio/blob/master/videos/home.mp4?raw=true)
 
 # Details
 
-The website have the following sections: \r
-\r
-* Header\r
-* Hero text\r
-* Projects slider\r
+The website have the following sections: 
+
+* Header
+* Hero text
+* Projects slider
 * Contact
 
 # Roadmap
 
-* [X] Scroll animations\r
-* [X] Hover animations\r
-* [X] Projects slider\r
-* [X] Contact form\r
-* [X] Contact links\r
-* [X] Animations in responsive\r
-* [X] Projects data from local js file\r
-* [X] 404 page\r
+* [X] Scroll animations
+* [X] Hover animations
+* [X] Projects slider
+* [X] Contact form
+* [X] Contact links
+* [X] Animations in responsive
+* [X] Projects data from local js file
+* [X] 404 page
 * [X] Thanks page (after submit contact form)
 
 
